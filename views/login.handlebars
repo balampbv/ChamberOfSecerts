@@ -1,3 +1,42 @@
+<style type="text/css">
+body
+{
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+}
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+</style>
+<!--Fixes bg-->
+<script language="Javascript">
+
+function FixBackgroundToScreen()
+{
+    bgImg = new Image(); 
+    bgImg.src = document.body.background;
+
+    if ((bgImg.height / window.innerHeight) < (bgImg.width / window.innerWidth))
+        document.body.style.backgroundSize = "auto 100%";
+    else
+        document.body.style.backgroundSize = "100% auto";
+};    
+</script>
+
+<script language="Javascript">
+window.onresize=function(){FixBackgroundToScreen();};
+</script>
+
+<body onload="FixBackgroundToScreen();">
+
+ <body id="bg" background="/images/home.jpg">
                 <div id="container_demo" >
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
@@ -6,7 +45,7 @@
                             <form  action="/users/login" method="post" autocomplete="on"> 
                                 <h1>Log in</h1> 
                                 <p> 
-                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
+                                    <label for="username" class="uname" data-icon="u" > Your   username </label>
                                     <input id="username" name="username" required="required" type="text"/>
                                 </p>
                                 <p> 

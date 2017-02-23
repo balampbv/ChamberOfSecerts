@@ -4,7 +4,7 @@ var router = express.Router();
 
 //Get homepage
 router.get('/',ensureAuthenticated,function(req,res){
-	res.render('index');
+	res.render('index',{layout:'dashlayout.handlebars'});
 });
  
  function ensureAuthenticated (req, res, next){

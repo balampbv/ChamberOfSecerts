@@ -1,19 +1,37 @@
 
                 {{#if errors}}
-      {{#each errors}}
+         {{#each errors}}
         <div class="alert alert-danger">{{msg}}</div>
-      {{/each}}
-{{/if}}
+            {{/each}}
+            {{/if}}
+<!--Fixes bg-->
+<script language="Javascript">
+
+function FixBackgroundToScreen()
+{
+    bgImg = new Image(); 
+    bgImg.src = document.body.background;
+
+    if ((bgImg.height / window.innerHeight) < (bgImg.width / window.innerWidth))
+        document.body.style.backgroundSize = "auto 100%";
+    else
+        document.body.style.backgroundSize = "100% auto";
+};    
+</script>
+
+<script language="Javascript">
+window.onresize=function(){FixBackgroundToScreen();};
+</script>
+
+<body onload="FixBackgroundToScreen();">
+
+ <body id="bg" background="/images/h2.jpg">
 
 
-            <div  id="container_demo">
-            <a class="hiddenanchor" id="toregister"></a>
-            <a class="hiddenanchor" id="tologin"></a>
-                    
-                <div id="wrapper">
-                        <div  class="register">
-                    
-                            <form  action="/users/register" method="post" autocomplete="on"> 
+
+
+             <div id="wrapper2">
+                        <div  class="register"><form  action="/users/register" method="post" autocomplete="on"> 
                                 <h1> Sign up </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
@@ -41,4 +59,4 @@
                             </form>
                         </div>
 				    </div>
-                </div>		
+          	

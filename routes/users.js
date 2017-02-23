@@ -12,7 +12,12 @@ router.get('/register', function(req, res){
 
 // Login
 router.get('/login', function(req, res){
-	res.render('login');
+	if(req.isAuthenticated())
+	{
+		res.redirect('/');
+	}
+	else
+		res.render('login');
 });
 
 // Register User
@@ -60,6 +65,7 @@ passport.use(new LocalStrategy(
    User.getUserByname(name, function(err, user){
    	if(err) throw err;
    	if(!user){
+   		
    		return done(null, false, {message: 'Unknown User'});
    	}
 
