@@ -28,18 +28,17 @@
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="/css/style1.css"/>
 
-
-</head>
+  </head>
 
 <body>
-	<div class="brand clearfix">
-		<a href="index.html" class="logo"><img src="img/logo.jpg" class="img-responsive" alt=""></a>
+	<div class="brand clearfix" >
+		<a href="#" class="logo"><img src="img/logo.jpg" class="img-responsive"  alt=""></a>
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
 		<ul class="ts-profile-nav">
 			<!--<li><a href="#">Help</a></li>
 			<li><a href="#">Settings</a></li>-->
 			<li class="ts-account">
-				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
+				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <!-- <i class="fa fa-angle-down hidden-side"></i> --></a>
 				<ul>
 					<li><a href="#" id="showprofile">My Account</a></li>
 					<!--<li><a href="#">Edit Account</a></li>-->
@@ -50,28 +49,44 @@
 	</div>
 	<!-- Navigation bar -->
 	<div class="ts-main-content">
-		<nav class="ts-sidebar">
-			<ul class="ts-sidebar-menu">
-				<li class="ts-label">Main</li>
-				<li  class="open" ><a href="/" id="showhome"><i class="fa fa-home fa-fw"></i>Home</a></li>
-				<li ><a href="#" id="showrules"><i class="fa fa-bullhorn"></i>Rules</a></li>
-				<li><a href="#" id="showclues"><i class="fa fa-edit"></i> Clues</a></li>
-				<li><a href="#" id="showleader"><i class="fa fa-group "></i>Leaderboard</a></li>
-				
-				<li><a href="#" id="showpanel"><i class="fa fa-comments-o" ></i>Discussion panel</a></li>
-
-				<li><a href="#" id="showcontact"><i class="fa fa-paper-plane-o"></i>Contact</a></li>
+			
+		<nav class="main-menu">
+			<ul class="ts-sidebar-menu" >
+				<li  class="open" >
+                <a href="/" id="showhome"><i class="fa fa-home fa-fw"></i>
+                    <span class="nav-text">   Home   </span>
+                </a></li>
+				<li >
+                <a href="#rules" id="showrules"><i class="fa fa-bullhorn"></i>
+                <span class="nav-text">  Rules</span>
+                    </a></li>
+				<li><a href="#clues" id="showclues"><i class="fa fa-edit"></i>
+                <span class="nav-text">Clues</span>
+                    </a></li>
+				<li><a href="#leaderboard" id="showleader"><i class="fa fa-group "></i>
+                <span class="nav-text">    Leaderboard</span>
+                    </a></li>
+				<li><a href="#panel" id="showpanel"><i class="fa fa-comments-o" ></i>
+                <span class="nav-text"> Discussion panel</span>
+                </a></li>
+                <li><a href="#contact" id="showcontact"><i class="fa fa-paper-plane-o"></i>
+                <span class="nav-text">  Contact</span>
+                </a></li>
 			</ul>
 		</nav>
 	</div>
-				<div id="home">Home</div>
-				<div id="rules" style="display:none;">Rules</div>
-				<div id="clues" style="display:none;">Clues</div>
-				<div id="leader" style="display:none;">leader</div>
-				<div id="panel" style="display:none;">panel</div>
-				<div id="contact" style="display:none;">contact</div>
-				<div id="profile" style="display:none;">profile</div>
+				
 
+    <main >
+
+                <div id="home" class="content">Home</div>
+				<div id="rules"  class="content" style="display:none;">Rules</div>
+				<div id="clues" class="content" style="display:none;">Clues</div>
+				<div id="leader"  class="content" style="display:none;">leader</div>
+				<div id="panel" class="content" style="display:none;">panel</div>
+				<div id="contact" class="content" style="display:none;">contact</div>
+				<div id="profile" class="content" style="display:none;">profile</div>
+    </main>            
 
 
 		
@@ -164,6 +179,7 @@ $(function() {
     });
 });
 });
+
 </script>
 
 		
