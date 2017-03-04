@@ -11,14 +11,13 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-
-mongoose.connect('mongodb://localhost/cos');
+mongoose.connect('mongodb://localhost/cos'); 
 var db = mongoose.connection;
 
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var dash = require('./routes/dash');
+var images = require('./routes/imagefile');
 
 
 
@@ -42,6 +41,7 @@ app.use(cookieParser());
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 
 // Express Session
@@ -92,8 +92,7 @@ app.use(function (req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/dash',dash);
-
+app.use('/i',images);
 // Set Port
 app.set('port', (process.env.PORT || 8000));
 

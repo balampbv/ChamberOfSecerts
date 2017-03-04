@@ -550,13 +550,13 @@ li {
   position: fixed;
   width: 100%;
   top: 0;
-}
-.brand .logo {
+} 
+.logo {
   box-sizing: border-box;
-  padding: 20px;
+  padding: 0px;
   float: left;
   display: block;
-  width: 200px;
+ 
 }
 @media only screen and (min-width: 992px) {
   .brand .logo {
@@ -903,7 +903,7 @@ h2 {
     width: 100%;
 }
 
-.img-wrapper img {
+.img-wrapper {
     width: 100%;
     height: 200px;
     -o-object-fit: cover;
