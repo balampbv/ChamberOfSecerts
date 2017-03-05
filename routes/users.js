@@ -14,7 +14,7 @@ router.get('/register', function(req, res){
 router.get('/login', function(req, res){
 	if(req.isAuthenticated())
 	{
-		var username = {name : user};
+	//	var username = {name : user};
 		res.redirect('/',username);
 	}
 	else
@@ -28,12 +28,12 @@ router.post('/register', function(req, res){
 	var password = req.body.passwordsignup;
 	var password2 = req.body.passwordsignup_confirm;
 	var qid = 1;
-	var points =0;
+	var points = 0;
 // Validation
 	req.checkBody('name', 'Name is required').notEmpty();
 	req.checkBody('email', 'Email is required').notEmpty();
 	req.checkBody('email', 'Email is not valid').isEmail();
-//	req.checkBody('username', 'Username is required').notEmpty();
+//req.checkBody('username', 'Username is required').notEmpty();
 	req.checkBody('password', 'Password is required').notEmpty();
 	req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
@@ -70,8 +70,8 @@ passport.use(new LocalStrategy(
   function(name, password, done) {
   
    User.getUserByname(name, function(err, user){
- 
-module.exports = user;
+   
+
    	if(err) throw err;
    	if(!user){	
 
@@ -89,6 +89,8 @@ module.exports = user;
    });
 //   callback(user);
 }));
+
+
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -116,4 +118,6 @@ router.get('/logout', function(req, res){
 	res.redirect('/users/login');
 });
 
+
 module.exports = router;
+

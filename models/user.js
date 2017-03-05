@@ -19,7 +19,9 @@ var UserSchema = mongoose.Schema({
 		type :String
 	},
 	points: {
-		type : String
+		type : String,
+		required:true
+
 	}
 	
 });

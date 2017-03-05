@@ -37,7 +37,7 @@
 			<!--<li><a href="#">Help</a></li>
 			<li><a href="#">Settings</a></li>-->
 			<li class="ts-account">
-				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt="">Welcome {{user.name}}<!-- <i class="fa fa-angle-down hidden-side"></i> --></a>
+				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt="">Welcome {{user.qid}}<!-- <i class="fa fa-angle-down hidden-side"></i> --></a>
 				<ul>
 					<li><a href="#" id="showprofile">My Account</a></li>
 					<!--<li><a href="#">Edit Account</a></li>-->
@@ -78,7 +78,21 @@
 
     <main >
 
-                <div id="home" class="content">Home<img class="img-wrapper" src ="./questions/IMG_2709.JPG"></img></div>
+<!--             <div id="home" class="content">Home<img class="img-wrapper" src ="./questions/{{qid}}.JPG"></img></div>
+
+ -->                <div id="home" qid="{{user.qid}}" class="content"><img class="img-wrapper" src ="./questions/{{user.qid}}.JPG"></img>
+                    <form>
+                    <section>
+                    <ul class="input-list style-1 clearfix">
+                    <li>
+                    <input  type="text" name="subans" id="subans" placeholder=":answer" required>
+                    </ul>
+                    </li>
+                    <input class="btn" style=" display:inline; position:absolute; top:320px; left:35%;" value="Submit" onclick="check();">
+
+                    </section>
+                    </form>
+                    </div>
 				<div id="rules"  class="content" style="display:none;">Rules</div>
 				<div id="clues" class="content" style="display:none;">Clues</div>
 				<div id="leader"  class="content" style="display:none;">leader</div>

@@ -25,10 +25,16 @@ var imageSchema = mongoose.Schema({
  points : {
  	type :String,
  	required:true
+ },
+
+
+ans : {
+ 	type :String,
+ 	required:true
  }
  
 });
- var q = exports.user;
+ //var q = exports.user;
  //console.log(user);
 var Image = module.exports = mongoose.model('files', imageSchema);
  
@@ -38,6 +44,11 @@ router.getImages = function(callback, limit) {
  
  Image.find(callback).limit(limit);
 }
+
+// Image.findOne({qid: 2}, function(err, files) {
+//   console.log(files.path);
+//   var repath = files.path;
+// });
  
 router.getImageById = function(qid, callback) {
   
@@ -63,10 +74,11 @@ router.getImageByName = function(name, callback){
 
 // var qid = user.qid;
  
-router.getimagebyqid = function(qid, callback){
-	var query = {qid: qid};
-	Image.findOne(query, callback);
-}
+
+// router.getimagebyqid = function(qid, callback){
+// 	var query = {qid: qid};
+// 	Image.findOne(query, callback);
+// }
 
  
 router.addImage = function(image, callback) {
@@ -120,5 +132,46 @@ from the total information, i am just using the path and the imageName to store 
  
 });
 
+
+// Verify user
+router.post('/verify', function(req, res){
+
+//	console.log(req.body);
+	var subans = req.body.subans;
+	console.log(subans);
+	var query = {qid: req.body.qid};
+	Image.findOne(query,function(err,data){
+		//console.log(qid);
+	var ans = data.ans;
+	// console.log(data);
+	 console.log(data.ans);
+	if(ans == subans)
+	{
+		User.update(query,{ $set : {qid : (parseInt(query.qid)+1).toString()}},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		User.update(query,{ $set : {points : (parseInt(query.points)+10).toString()}},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		
+		res.send("correct");
+	}
+	else
+	{
+		res.send("Incorrect");
+	}
+
+	
+	});
+	
+
+
+	});
 
 module.exports = router;
