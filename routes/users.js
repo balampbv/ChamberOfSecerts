@@ -7,7 +7,7 @@ var User = require('../models/user');
 
 // Register
 router.get('/register', function(req, res){
-	res.render('register');
+	res.render('register',{layout:'layout.handlebars'});
 });
 
 // Login
@@ -15,10 +15,10 @@ router.get('/login', function(req, res){
 	if(req.isAuthenticated())
 	{
 	//	var username = {name : user};
-		res.redirect('/',username);
+		res.redirect('/');
 	}
 	else
-		res.render('login');
+		res.render('login',{layout:'layout.handlebars'});
 });
 
 // Register User
@@ -68,7 +68,6 @@ router.post('/register', function(req, res){
 
 passport.use(new LocalStrategy(
   function(name, password, done) {
-  
    User.getUserByname(name, function(err, user){
    
 
@@ -106,17 +105,22 @@ router.post('/login',
   passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login',failureFlash: true}),
   function(req, res) {
 //   	res.json(user);
-       res.redirect('/');
+
+  //console.log(users);
+       res.render('/');
   });
 
 router.get('/logout', function(req, res){
 	
-	req.logout();
-
+	req.logout();//Removes login sessions
 	req.flash('success_msg', 'You are logged out');
 
 	res.redirect('/users/login');
+	//req.session.destroy();
+
+	
 });
+
 
 
 module.exports = router;

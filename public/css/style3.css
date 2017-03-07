@@ -1,5 +1,6 @@
 /* remove codrops styles and reset the whole thing */
 #container_demo{
+	padding-top: 10;
 	width: inherit;
 	height: inherit;
 	 text-align: left;
@@ -8,6 +9,43 @@
 	 margin: 0 auto;
 	 font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
 }
+@font-face {
+    font-family: 'harry';
+    src: url('fonts/harry.TTF') format('truetype');
+    src: url('fonts/harry.woff') format('woff');
+   font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LUMOS';
+    src: url('fonts/LUMOS.TTF') format('truetype');
+    src: url('fonts/LUMOS.woff') format('woff');
+   font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PARSELTO';
+    src: url('fonts/PARSELTO.TTF') format('truetype');
+    src: url('fonts/PARSELTO.woff') format('woff');
+   font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'magic1';
+    src: url('fonts/magic1.ttf') format('truetype');
+    src: url('fonts/magic1.WOFF') format('woff');
+   font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'magic';
+    src: url('fonts/magic2.ttf') format('truetype');
+    src: url('fonts/magic2.WOFF') format('woff');
+   font-weight: normal;
+    font-style: normal;
+}
+
 
 /** fonts used for the icons **/ 
 @font-face {
@@ -30,7 +68,14 @@
     font-weight: normal;
     font-style: normal;
 
+}/*
+Backgorund*/
+.fit
+{
+background-size: 100%!important;
+
 }
+
 a.hiddenanchor{
 	display: none;
 }
@@ -41,20 +86,19 @@ a.hiddenanchor{
 	min-height: 560px;	
  }
  #wrapper {
+
 	width: 70%;
-	right: 0px;
+	right: 50%;
 	min-height: 670px;	
 	margin: 0px auto;	
 	width: 450px;
 	position: relative;	
- opacity: 0.75;
     filter: alpha(opacity=50);
 }
 
  #wrapper2 {
-left: -150px;
-	width: 20%;
-	right: 0px;
+ 	width: 20%;
+	right: 50%;
 	max-height:770px;	
 	margin: 0px auto;	
 	width: 450px;
@@ -69,14 +113,46 @@ left: -150px;
 	color: rgb(95, 155, 198);
 	text-decoration: underline;
 }
-
+.b
+{
+	font-family: 'harry', Arial, sans-serif; 
+	font-size: 25px;
+}
+.p{
+	
+	font-family: 'PARSELTO', Arial, sans-serif; 
+	font-size: 25px;
+}
+.l
+{
+font-family: 'LUMOS', Arial, sans-serif; 
+	font-size: 25px;	
+}
+.m
+{
+	font-family: 'magic', Arial, sans-serif; 
+	font-size: 25px;
+}
+.m1
+{
+	font-family: 'magic1', Arial, sans-serif; 
+	font-size: 25px;
+}
+.b1
+{
+font-family: 'FranchiseRegular', Arial, sans-serif; 
+font-size: 20px;		
+}
+.bgimg {
+    background-image: url('/images/dash.jpg');!important;
+}
 #wrapper h1{
 	font-size: 48px;
 	color: rgb(6, 106, 117);
 	padding: 2px 0 10px 0;
 	font-weight: bold;
 	text-align: center;
- font-family: 'FranchiseRegular', Arial, sans-serif; 
+ font-family: 'harry', Arial, sans-serif; 
 	padding-bottom: 30px;
 }
 /** For the moment only webkit supports the background-clip:text; */
@@ -111,6 +187,7 @@ left: -150px;
 	margin: 0px;
 }
 #wrapper label{
+	 font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
 	color: rgb(64, 92, 96);
 	position: relative;
 }
@@ -228,7 +305,7 @@ p.signin.button{
 	font-size: 48px;
 	color: rgb(6, 106, 117);
 	padding: 2px 0 10px 0;
-	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+font-family: 'harry', Arial, sans-serif; 
 	font-weight: bold;
 	text-align: center;
 	padding-bottom: 10px;

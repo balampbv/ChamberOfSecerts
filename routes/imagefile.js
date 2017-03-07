@@ -31,7 +31,13 @@ var imageSchema = mongoose.Schema({
 ans : {
  	type :String,
  	required:true
+ },
+
+clues : {
+ 	type :String,
+ 	required:true
  }
+
  
 });
  //var q = exports.user;
@@ -140,6 +146,9 @@ router.post('/verify', function(req, res){
 	var subans = req.body.subans;
 	console.log(subans);
 	var query = {qid: req.body.qid};
+	console.log(query);
+	var points_query = {points: req.body.points};
+	console.log(points_query);
 	Image.findOne(query,function(err,data){
 		//console.log(qid);
 	var ans = data.ans;
@@ -147,17 +156,20 @@ router.post('/verify', function(req, res){
 	 console.log(data.ans);
 	if(ans == subans)
 	{
+
 		User.update(query,{ $set : {qid : (parseInt(query.qid)+1).toString()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
 				console.log(data);
 		});
-		User.update(query,{ $set : {points : (parseInt(query.points)+10).toString()}},function(err,data){
+
+		
+		User.update(points_query,{ $set : {points : (parseInt(points_query.points)+10).toString()}},function(err,data1){
 			if(err)
 				console.log(err);
 			else
-				console.log(data);
+				console.log(data1);
 		});
 		
 		res.send("correct");

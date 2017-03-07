@@ -28,7 +28,7 @@ var app = express();
 
 // View Engine
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout:'layout'}));
+app.engine('handlebars', exphbs({defaultLayout:'dashlayout'}));
 app.set('view engine', 'handlebars');
 
 
@@ -48,7 +48,9 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(session({
     secret: 'secret',
     saveUninitialized: true,
-    resave: true
+    resave: true,
+
+     cookie:{_expires : 60000}
 }));
 
 
@@ -99,3 +101,4 @@ app.set('port', (process.env.PORT || 8000));
 app.listen(app.get('port'), function(){
 	console.log('Server started on port '+app.get('port'));
 });
+

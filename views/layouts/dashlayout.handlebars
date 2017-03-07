@@ -25,11 +25,26 @@
 	<link rel="stylesheet" href="/css/fileinput.min.css"/>
 	<!-- Awesome Bootstrap checkbox -->
 	<link rel="stylesheet" href="/css/awesome-bootstrap-checkbox.css"/>
+    <link rel="stylesheet" href="/css/style3.css"/>
+    
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="/css/style1.css"/>
-</head>
+    <!-- Profile Css -->
+    <link rel="stylesheet" href="/css/profile.css"/>
+        <!-- Conatct css -->
+    <link rel="stylesheet" href="/css/contact.css"/>
 
-<body>
+        <!-- Conatct css -->
+    <link rel="stylesheet" href="/css/leader.css"/>
+    <!-- Gritter CSS -->
+    <link rel="stylesheet" href="/css/jquery.gritter.css" />
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery.gritter.js"></script>
+
+
+</head><!-- background="/images/h3.jpg"
+ -->
+<body background="/images/h3.jpg" class="fit" > 
 	<div class="brand clearfix" >
 		<a href="#" class="logo"><img style="border:0px; width:130px; height:60px " src="img/logo1.png" class="img-responsive"  alt=""></a>
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
@@ -39,7 +54,7 @@
 			<li class="ts-account">
 				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt="">Welcome {{user.qid}}<!-- <i class="fa fa-angle-down hidden-side"></i> --></a>
 				<ul>
-					<li><a href="#" id="showprofile">My Account</a></li>
+					<li><a href="#profile" id="showprofile">My Account</a></li>
 					<!--<li><a href="#">Edit Account</a></li>-->
 					<li><a href="/users/logout">Logout</a></li>
 				</ul>
@@ -76,11 +91,14 @@
 	</div>
 				
 
-    <main >
-
+    
 <!--             <div id="home" class="content">Home<img class="img-wrapper" src ="./questions/{{qid}}.JPG"></img></div>
 
- -->                <div id="home" qid="{{user.qid}}" class="content"><img class="img-wrapper" src ="./questions/{{user.qid}}.JPG"></img>
+ -->              
+<div style="">
+<main >
+
+   <div id="home" qid="{{user.qid}}" points="{{user.points}}" class="content"><img class="img-wrapper" src ="./questions/{{user.qid}}.JPG"></img>
                     <form>
                     <section>
                     <ul class="input-list style-1 clearfix">
@@ -88,20 +106,83 @@
                     <input  type="text" name="subans" id="subans" placeholder=":answer" required>
                     </ul>
                     </li>
-                    <input class="btn" style=" display:inline; position:absolute; top:320px; left:35%;" value="Submit" onclick="check();">
+                    <input class="btn" style=" display:inline; position:absolute; top:320px; left:28%;" value="Submit" onclick="check();">
 
                     </section>
                     </form>
                     </div>
-				<div id="rules"  class="content" style="display:none;">Rules</div>
+				<div id="rules"  class="content" style="background-image: url(/images/h3.jpg); opacity:0.9; display:none;" >Rules</div>
 				<div id="clues" class="content" style="display:none;">Clues</div>
-				<div id="leader"  class="content" style="display:none;">leader</div>
+				<div id="leader"  class="lead_cen" style="display:none;">
+                
+<table>
+  <thead class="p">
+    <tr>
+      <th>#</th>
+      <th>Wizard name</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <!-- <tbody>
+    <tr>
+      <td><strong>1</strong></td>
+      <td>Balasekar</td>
+      <td>100</td>
+    </tr>
+  </tbody>
+   --><tbody> 
+
+        {{#each users}} 
+        <tr> 
+            <td>  {{@index}}</td>
+            <td class="b" style="font-size:17px;">{{name}}</td> 
+            <td class="m">{{points}}</td> 
+            </tr> 
+           
+        {{/each}} 
+    </tbody> 
+</table>            
+                </div>
 				<div id="panel" class="content" style="display:none;">panel</div>
-				<div id="contact" class="content" style="display:none;">contact</div>
-				<div id="profile" class="content" style="display:none;">profile</div>
+				<div id="contact" class="clear hi" style="display:none;">
+                        <div class="plan"  onclick="dodajAktywne(this)">
+                        <h3 class="m" >Bala Sekar<span><img src="./images/1.JPG"></img></span></h3>         
+                        <ul class="b1">
+                        <li><b class="m">Ph:</b> 8899776655</li>
+                        <li><b class="m">Email:</b><i> bala@gmail.com</li>           
+                        </ul> 
+                    </div>
+                    <div class="plan most-popular " onclick="dodajAktywne(this)">
+                        <h3 class="m1">Selva kumar<span><img src="./images/1.JPG"></img></span></h3>       
+                        <ul class="b1">
+                        <li><b class="m1">Ph:</b> 1122334455</li>
+                        <li><b class="m1">Email:</b> selva@gmail.com</li>          
+                        </ul>    
+                    </div>
+
+                </div>            
+                </div>
+				<div id="profile"  style="display:none;">
+                                <div class="profile">
+                                    <div class="avatar-flip">
+                                    <img src="./images/profile.jpg" height="150" width="150">
+                                    <img src="./images/giphy.gif" height="150" width="150">
+                                    </div>
+                                    <div class="l"> 
+                                   <p>Wizard Name : <span class="b1">{{user.name}}</span><br><br>
+                                   Score  : <span class="b1">{{user.points}}</p>
+                                   </div>
+                                    <p class="l">Level Completed:</p>
+                                    <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{user.qid}}" aria-valuemin="0" aria-valuemax="5" style="width:{{user.qid}}0%">
+                                   
+                                    </div>
+                
+                                </div>
+                </div>
     </main>            
 
-
+</div>
 		
 	<!-- Loading Scripts -->
 	<script src="/js/jquery.min.js"></script>
@@ -113,6 +194,7 @@
 	<script src="/js/fileinput.js"></script>
 	<script src="/js/chartData.js"></script>
 	<script src="/js/main.js"></script>
+    <script src="/js/math.js"></script>
 
 <!--For hiding and showing selected div's-->
 
@@ -192,6 +274,24 @@ $(function() {
     });
 });
 });
+$.gritter.add({
+  // heading of the notification
+  title: 'This is a sticky notice!',
+  // the text inside the notification
+  text: 'Your message here'
+});
+
+</script>
+
+<!-- For contact Event -->
+<script type="">
+var test=document.getElementsByClassName("plan");
+for(var i=0;i<test.length;i++){
+    test[i].addEventListener("click",function(){
+        this.classList.toggle("most-popular");
+
+    })
+}
 
 </script>
 

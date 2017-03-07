@@ -6,6 +6,11 @@ body
     width: 100%;
 }
 #bg {
+   no-repeat; 
+  -webkit-background-size: cover;!Important
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   position: fixed; 
   top: 0; 
   left: 0; 
@@ -15,28 +20,8 @@ body
   min-height: 100%;
 }
 </style>
-<!--Fixes bg-->
-<script language="Javascript">
 
-function FixBackgroundToScreen()
-{
-    bgImg = new Image(); 
-    bgImg.src = document.body.background;
-
-    if ((bgImg.height / window.innerHeight) < (bgImg.width / window.innerWidth))
-        document.body.style.backgroundSize = "auto 100%";
-    else
-        document.body.style.backgroundSize = "100% auto";
-};    
-</script>
-
-<script language="Javascript">
-window.onresize=function(){FixBackgroundToScreen();};
-</script>
-
-<body onload="FixBackgroundToScreen();">
-
- <body id="bg" background="/images/home.jpg">
+ <body background = "/images/lr1.jpg" class="fit">
                 <div id="container_demo" >
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
@@ -67,3 +52,4 @@ window.onresize=function(){FixBackgroundToScreen();};
                         </div>
                     </div>
                 </div>
+</body>
