@@ -11,39 +11,31 @@
 	
 <title>Chamber of Secrets</title>
 <link rel="icon" href="/img/favicon.gif" type="image/x-icon" />
-	<!-- Font awesome -->
+	<!-- Icons awesome -->
 	<link rel="stylesheet" href="/css/font-awesome.min.css"/>
 	<!-- Sandstone Bootstrap CSS -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css"/>
-	<!-- Bootstrap Datatables -->
-	<link rel="stylesheet" href="/css/dataTables.bootstrap.min.css"/>
-	<!-- Bootstrap social button library -->
-	<link rel="stylesheet" href="/css/bootstrap-social.css"/>
-	<!-- Bootstrap select -->
-	<link rel="stylesheet" href="/css/bootstrap-select.css"/>
-	<!-- Bootstrap file input -->
-	<link rel="stylesheet" href="/css/fileinput.min.css"/>
-	<!-- Awesome Bootstrap checkbox -->
-	<link rel="stylesheet" href="/css/awesome-bootstrap-checkbox.css"/>
-    <link rel="stylesheet" href="/css/style3.css"/>
-    
-	<!-- Admin Stye -->
+   <!--  Font and login and sign-up css -->
+	<link rel="stylesheet" href="/css/style3.css"/>
+    <!-- Main Stye -->
 	<link rel="stylesheet" href="/css/style1.css"/>
     <!-- Profile Css -->
     <link rel="stylesheet" href="/css/profile.css"/>
-        <!-- Conatct css -->
+    <!-- Conatct css -->
     <link rel="stylesheet" href="/css/contact.css"/>
-
-        <!-- Conatct css -->
+    <!-- Rules css --><!-- 
+    <link rel="stylesheet" href="/css/rules.css"/> -->
+    <!-- Conatct css -->
     <link rel="stylesheet" href="/css/leader.css"/>
+    <!-- Conatct css -->
+    
     <!-- Gritter CSS -->
-    <link rel="stylesheet" href="/css/jquery.gritter.css" />
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="/js/jquery.gritter.js"></script>
-
-
-</head><!-- background="/images/h3.jpg"
- -->
+<link rel="stylesheet" type="text/css" href="/css/jquery.gritter.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.gritter.js"></script>
+   
+    
+</head>
 <body background="/images/h3.jpg" class="fit" > 
 	<div class="brand clearfix" >
 		<a href="#" class="logo"><img style="border:0px; width:130px; height:60px " src="img/logo1.png" class="img-responsive"  alt=""></a>
@@ -61,6 +53,8 @@
 			</li>
 		</ul>
 	</div>
+
+
 	<!-- Navigation bar -->
 	<div class="ts-main-content">
 			
@@ -111,7 +105,9 @@
                     </section>
                     </form>
                     </div>
-				<div id="rules"  class="content" style="background-image: url(/images/h3.jpg); opacity:0.9; display:none;" >Rules</div>
+				<div id="rules"  class="content" style=" opacity:0.9; display:none;" >
+                        
+                </div>
 				<div id="clues" class="content" style="display:none;">Clues</div>
 				<div id="leader"  class="lead_cen" style="display:none;">
                 
@@ -188,14 +184,23 @@
 	<script src="/js/jquery.min.js"></script>
 	<script src="/js/bootstrap-select.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/jquery.dataTables.min.js"></script>
-	<script src="/js/dataTables.bootstrap.min.js"></script>
-	<script src="/js/Chart.min.js"></script>
-	<script src="/js/fileinput.js"></script>
-	<script src="/js/chartData.js"></script>
 	<script src="/js/main.js"></script>
-    <script src="/js/math.js"></script>
+    
+     <script type="text/javascript">
 
+    $(function(){
+    var unique_id = $.gritter.add({
+                title: 'welcome to chamber of secrets!',
+                text: 'explore the secrets',
+                image: '/images/3.jpg',
+                sticky: true,
+                time: '',
+                class_name: 'my-sticky-class'
+            });
+            return false;
+        });
+        
+</script>
 <!--For hiding and showing selected div's-->
 
 <script src="https://code.jquery.com/jquery-1.7.2.js"></script>

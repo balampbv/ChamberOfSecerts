@@ -69,8 +69,9 @@ router.post('/register', function(req, res){
 passport.use(new LocalStrategy(
   function(name, password, done) {
    User.getUserByname(name, function(err, user){
-   
-
+//    function(req, res){
+//   res.cookie("key", user);
+// });
    	if(err) throw err;
    	if(!user){	
 
@@ -112,11 +113,16 @@ router.post('/login',
 
 router.get('/logout', function(req, res){
 	
-	req.logout();//Removes login sessions
 	req.flash('success_msg', 'You are logged out');
 
-	res.redirect('/users/login');
 	//req.session.destroy();
+	req.session.destroy(function (err) {
+	res.clearCookie('connect.sid', { path: '/' });
+	req.logout();//Removes login sessions
+	
+	res.redirect('/users/login');
+	
+  });
 
 	
 });

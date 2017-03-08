@@ -33,12 +33,6 @@ ans : {
  	required:true
  },
 
-clues : {
- 	type :String,
- 	required:true
- }
-
- 
 });
  //var q = exports.user;
  //console.log(user);

@@ -13,7 +13,7 @@
   position: absolute;
   z-index: 15;
   top: 40%;
-  left: 50%;
+  left: 40%;
   margin: -100px 0 0 -150px;
   }
 .profile:hover .avatar-flip {

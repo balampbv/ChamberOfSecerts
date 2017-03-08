@@ -37,7 +37,44 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// set a cookie
+app.use(function (req, res, next) {
+  // check if client sent cookie
+  var cookie = req.cookies.cookieName;
+  if (cookie === undefined)
+  {
+    // no: set a new cookie
+    var randomNumber=Math.random().toString();
+    randomNumber=randomNumber.substring(2,randomNumber.length);
+    res.cookie('cookieName',randomNumber, { maxAge: 900000, httpOnly: true });
+    console.log('cookie created successfully');
+  } 
+  else
+  {
+    // yes, cookie was already present 
+    //console.log('cookie exists', cookie);
+  } 
+  next(); // <-- important!
+});
 
+// helper
+exphbs.create({
+  // Specify helpers which are only registered on this instance.
+  helpers: {
+    math: function(lvalue, operator, rvalue, options) { 
+       lvalue = parseFloat(lvalue);
+    rvalue = parseFloat(rvalue);
+        
+      return {
+        "+": lvalue + rvalue,
+        "-": lvalue - rvalue,
+        "*": lvalue * rvalue,
+        "/": lvalue / rvalue,
+        "%": lvalue % rvalue
+    }[operator];
+  }
+}
+});
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -48,9 +85,7 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(session({
     secret: 'secret',
     saveUninitialized: true,
-    resave: true,
-
-     cookie:{_expires : 60000}
+    resave: true
 }));
 
 

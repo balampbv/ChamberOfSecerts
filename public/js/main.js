@@ -21,7 +21,19 @@ function check()
 	    });
 
 }
-Handlebars.registerHelper("inc", function(value, options)
-{
-    return parseInt(value) + 1;
-});
+
+ <script type="text/javascript">
+
+    $(function(){
+    var unique_id = $.gritter.add({
+                title: 'welcome to chamber of secrets!',
+                text: 'explore the secrets',
+                image: '/images/3.jpg',
+                sticky: true,
+                time: '',
+                class_name: 'my-sticky-class'
+            });
+            return false;
+        });
+        
+</script>
