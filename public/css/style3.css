@@ -9,6 +9,13 @@
 	 margin: 0 auto;
 	 font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
 }
+
+#stats li
+{
+	display:list-item;
+  padding-right: 20px;
+  float: center;
+}
 @font-face {
     font-family: 'harry';
     src: url('fonts/harry.TTF') format('truetype');

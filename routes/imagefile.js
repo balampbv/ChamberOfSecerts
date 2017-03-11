@@ -32,7 +32,7 @@ ans : {
  	type :String,
  	required:true
  },
-
+ 
 });
  //var q = exports.user;
  //console.log(user);
@@ -56,16 +56,16 @@ router.getImageById = function(qid, callback) {
  
 }
 
-router.get('/images', function(req, res) {
-//calling the function from index.js class using routes object..
-router.getimagebyqid(function(err, genres) {
-if (err) {
-throw err;
+// router.get('/images', function(req, res) {
+// //calling the function from index.js class using routes object..
+// router.getimagebyqid(function(err, genres) {
+// if (err) {
+// throw err;
  
-}
-res.json(genres);
-});
-});
+// }
+// res.json(genres);
+// });
+// });
  
 router.getImageByName = function(name, callback){
 	var query = {originalname: name};
@@ -150,14 +150,144 @@ router.post('/verify', function(req, res){
 	 console.log(data.ans);
 	if(ans == subans)
 	{
+			
 
-		User.update(query,{ $set : {qid : (parseInt(query.qid)+1).toString()}},function(err,data){
+		//Model.update(query, { $set: { name: 'jason borne' }}, options, callback)
+		if(ans=="ans1")
+		{
+			User.update(query,{ $set : {qid : 'FindMeIfUDare_2' }},function(err,data){
 			if(err)
 				console.log(err);
 			else
 				console.log(data);
 		});
-
+		}
+		if(ans=="ans2")
+		{
+			User.update(query,{ $set : {qid : 'DecryptMe_3' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans3")
+		{
+			User.update(query,{ $set : {qid : 'EncryptOnMe_4' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans4")
+		{
+			User.update(query,{ $set : {qid : 'RevealTheSecrets_5' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans5")
+		{
+			User.update(query,{ $set : {qid : 'TearsOfThePhoenix_6' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans6")
+		{
+			User.update(query,{ $set : {qid : 'FloatingBroomStick_7' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans7")
+		{
+			User.update(query,{ $set : {qid : 'TomRiddle_8' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans8")
+		{
+			User.update(query,{ $set : {qid : 'HarryFriendZoned_9' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans9")
+		{
+			User.update(query,{ $set : {qid : 'LordVoldemort_10' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans10")
+		{
+			User.update(query,{ $set : {qid : 'HouseSlytherine_11' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans11")
+		{
+			User.update(query,{ $set : {qid : 'GodrickGriffindor_12' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans12")
+		{
+			User.update(query,{ $set : {qid : 'Basilisk_13' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans13")
+		{
+			User.update(query,{ $set : {qid : 'ParselTongue_14' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans14")
+		{
+			User.update(query,{ $set : {qid : 'HarRy_PoTter_15' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
+		if(ans=="ans15")
+		{
+			User.update(query,{ $set : {qid : 'LevelCompleted' }},function(err,data){
+			if(err)
+				console.log(err);
+			else
+				console.log(data);
+		});
+		}
 		
 		User.update(points_query,{ $set : {points : (parseInt(points_query.points)+10).toString()}},function(err,data1){
 			if(err)
@@ -165,7 +295,6 @@ router.post('/verify', function(req, res){
 			else
 				console.log(data1);
 		});
-		
 		res.send("correct");
 	}
 	else

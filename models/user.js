@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'); 
 var bcrypt = require('bcryptjs');
 
 
@@ -13,7 +13,10 @@ var UserSchema = mongoose.Schema({
 		type: String
 	},
 	email: {
-		type: String
+		type: String,
+		unique : true,
+		required:true
+
 	},
 	qid: {
 		type :String
@@ -38,16 +41,17 @@ module.exports.createUser = function(newUser, callback){
 }
 
 
-module.exports.getUserByname = function(name, callback){
-	var query = {name: name};
-	User.findOne(query, callback);
-}
-
-
 module.exports.getUserBymail = function(email, callback){
 	var query = {email: email};
+	console.log(query);
 	User.findOne(query, callback);
 }
+
+
+// module.exports.getUserBymail = function(email, callback){
+// 	var query = {email: email};
+// 	User.findOne(query, callback);
+// }
 module.exports.getUserById = function(id, callback){
 	User.findById(id, callback);
 }

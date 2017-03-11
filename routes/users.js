@@ -27,7 +27,7 @@ router.post('/register', function(req, res){
 	var email = req.body.emailsignup;
 	var password = req.body.passwordsignup;
 	var password2 = req.body.passwordsignup_confirm;
-	var qid = 1;
+	var qid = "ChamberOfSecret_1";
 	var points = 0;
 // Validation
 	req.checkBody('name', 'Name is required').notEmpty();
@@ -67,8 +67,8 @@ router.post('/register', function(req, res){
 });
 
 passport.use(new LocalStrategy(
-  function(name, password, done) {
-   User.getUserByname(name, function(err, user){
+  function(email, password, done) {
+   User.getUserBymail(email, function(err, user){
 //    function(req, res){
 //   res.cookie("key", user);
 // });
@@ -94,6 +94,7 @@ passport.use(new LocalStrategy(
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
+   
 });
 
 passport.deserializeUser(function(id, done) {
@@ -101,15 +102,24 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+router.post('/login', passport.authenticate('local',{failureRedirect : '/users/login',
+    failureFlash : true}), function(req, res) {
+	res.cookie('name', 'Bala Sekar', { maxAge: 900000, httpOnly: true });
+	res.redirect('/');
+});
 
-router.post('/login',
-  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login',failureFlash: true}),
-  function(req, res) {
-//   	res.json(user);
 
-  //console.log(users);
-       res.render('/');
-  });
+// app.post('/login', passport.authenticate('local-login', {
+//     failureRedirect : '/login',
+//     failureFlash : true
+// }),function(req,res){
+//     if(!req.query.url_next){
+//         res.redirect('/profile');
+//     }
+//     else{
+//         res.redirect(req.query.url_next);
+//     }
+// });
 
 router.get('/logout', function(req, res){
 	
@@ -126,6 +136,8 @@ router.get('/logout', function(req, res){
 
 	
 });
+
+
 
 
 

@@ -5,17 +5,36 @@ var Handlebars = require('express-handlebars');
 
 var User = require('../models/user');
 
+var Clues = require('../models/clues');
+
 //Get homepage
 router.get('/',ensureAuthenticated,function(req,res){
-
-	User.find({}, null, {sort: {points: 'descending'}}, function(err, users) {
+	//console.log(user);
+	var clues ={};
+	var query = {qid: "ChamberOfSecret_1"};
+	//console.log(query);
+	Clues.findOne(query,function(err,d){
+		if(err)throw err;
+		//console.log(d.clue);
+	var clues = d.clue;
+	var comments=d.panel;
+	//console.log(d);
+	User.find({}, null, {sort: {points: 'descending'},limit:10}, function(err, users) {
 	
-	//console.log(users);
+	var set ={};
+	set.clues=clues;
+	set.comments=comments;
+	set.users=users;
 	//res.render('/',users);
-//
-if(err)
+	//console.log(clues);
+	console.log(req.cookies.name);
+ 		
+	if(err)
 	console.log(err);
-	res.render('index',{users});
+	
+	res.render('index',set);
+		});
+
  });
 });
  

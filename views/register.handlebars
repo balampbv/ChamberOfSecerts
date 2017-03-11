@@ -45,10 +45,11 @@ window.onresize=function(){FixBackgroundToScreen();};
                                 </p>
                                 <p> 
                                     <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" />
+                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" onkeyup="checkPass(); return false;" />
+                                     <span id="confirmMessage" class="confirmMessage"></span>
                                 </p>
                                 <p class="signin button"> 
-									<input type="submit" value="Sign up"/> 
+									<input type="submit" value="Sign up" /> 
 								</p>
                                 <p class="change_link">  
 									Already a member ?
@@ -58,3 +59,18 @@ window.onresize=function(){FixBackgroundToScreen();};
                         </div>
 				    </div>
           	
+<script>
+    var password = document.getElementById("passwordsignup");
+  confirm_password = document.getElementById("passwordsignup_confirm");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>

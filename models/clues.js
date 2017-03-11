@@ -12,8 +12,11 @@ var ClueSchema = mongoose.Schema({
 		type : String,
 		required:true
 
-	}
-	
+	},
+	panel:{
+		type:String,
+		required:true
+	}	
 });
 
 
@@ -26,6 +29,6 @@ module.exports.getclue= function(qid, callback){
 	Clues.findOne(query, callback);
 }
 
-Clues.getclue(name,function(err,clue){
-		if(err) throw err;
-	});
+// Clues.getclue(name,function(err,clue){
+// 		if(err) throw err;
+// 	});

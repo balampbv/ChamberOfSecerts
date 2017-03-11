@@ -4,6 +4,7 @@
 // var mongoose = require('mongoose');
 // var app=express();
 
+// var User = require('../models/user');
 
 // //path and originalname are the fields stored in mongoDB
 // var imageSchema = mongoose.Schema({
@@ -24,11 +25,21 @@
 //  points : {
 //  	type :String,
 //  	required:true
+//  },
+
+
+// ans : {
+//  	type :String,
+//  	required:true
+//  },
+//  clues :{
+//  	type :String,
+//  	required:true
 //  }
- 
+
 // });
- 
- 
+//  //var q = exports.user;
+//  //console.log(user);
 // var Image = module.exports = mongoose.model('files', imageSchema);
  
 // var Image = mongoose.model('files', imageSchema);
@@ -37,36 +48,14 @@
  
 //  Image.find(callback).limit(limit);
 // }
+
+// // Image.findOne({qid: 2}, function(err, files) {
+// //   console.log(files.path);
+// //   var repath = files.path;
+// // });
  
- 
-// router.getImageById = function(id, callback) {
+// router.getImageById = function(qid, callback) {
   
-//  Image.findById(id, callback);
+//  Image.findById(qid, callback);
  
 // }
-
-// router.getImageByName = function(name, callback){
-// 	var query = {originalname: name};
-// 	Image.findOne(query, callback);
-// }
-
- 
-// router.addImage = function(image, callback) {
-//  Image.create(image, callback);
-// }
- 
- 
-// // To get more info about 'multer'.. you can go through https://www.npmjs.com/package/multer..
-// var storage = multer.diskStorage({
-//  destination: function(req, file, cb) {
-//  cb(null, 'public/questions')
-//  },
-//  filename: function(req, file, cb) {
-//  cb(null, file.originalname);
-//  }
-// });
- 
-// var upload = multer({
-//  storage: storage
-// });
-//  
