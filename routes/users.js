@@ -104,22 +104,10 @@ passport.deserializeUser(function(id, done) {
 });
 router.post('/login', passport.authenticate('local',{failureRedirect : '/users/login',
     failureFlash : true}), function(req, res) {
-	res.cookie('name', 'Bala Sekar', { maxAge: 900000, httpOnly: true });
 	res.redirect('/');
 });
 
 
-// app.post('/login', passport.authenticate('local-login', {
-//     failureRedirect : '/login',
-//     failureFlash : true
-// }),function(req,res){
-//     if(!req.query.url_next){
-//         res.redirect('/profile');
-//     }
-//     else{
-//         res.redirect(req.query.url_next);
-//     }
-// });
 
 router.get('/logout', function(req, res){
 	
@@ -127,7 +115,6 @@ router.get('/logout', function(req, res){
 
 	//req.session.destroy();
 	req.session.destroy(function (err) {
-	res.clearCookie('connect.sid', { path: '/' });
 	req.logout();//Removes login sessions
 	
 	res.redirect('/users/login');

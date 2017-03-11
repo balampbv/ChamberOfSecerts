@@ -15,6 +15,11 @@
   <meta property="og:url" content="https://chamber-selvadurairaj.c9users.io/#comments8"/>
   <meta property="og:url" content="https://chamber-selvadurairaj.c9users.io/#comments9"/>
   <meta property="og:url" content="https://chamber-selvadurairaj.c9users.io/#comments10"/>
+  <meta property="og:url" content="https://chamber-selvadurairaj.c9users.io/#comments11"/>
+  <meta property="og:url" content="https://chamber-selvadurairaj.c9users.io/#comments12"/>
+  <meta property="og:url" content="https://chamber-selvadurairaj.c9users.io/#comments13"/>
+  <meta property="og:url" content="https://chamber-selvadurairaj.c9users.io/#comments14"/>
+  <meta property="og:url" content="https://chamber-selvadurairaj.c9users.io/#comments15"/>
   <meta property="og:title" content="This Page Title"/>
 	
 <title>Chamber of Secrets</title>
@@ -157,6 +162,32 @@
 </div>
 
 <div id="leader"  class="lead_cen" style="display:none;">
+<script type="text/javascript">
+Handlebars.registerHelper('eachData', function(context, options) {
+      var fn = options.fn, inverse = options.inverse, ctx;
+      var ret = "";
+
+      if(context && context.length > 0) {
+        for(var i=0, j=context.length; i<j; i++) {
+          ctx = Object.create(context[i]);
+          ctx.index = i;
+          ret = ret + fn(ctx);
+        }
+      } else {
+        ret = inverse(this);
+      }
+      return ret;
+    }); 
+
+Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
+    lvalue = parseFloat(lvalue);
+    rvalue = parseFloat(rvalue);
+
+    return {
+        "+": lvalue + rvalue
+    }[operator];
+});
+</script>
             <table>
               <thead class="p">
                 <tr>
@@ -169,7 +200,8 @@
 
         {{#each users}} 
         <tr> 
-            <td>  {{@index}}</td>
+
+            <td>  {{ inc @index }}</td>
             <td class="b" style="font-size:17px;">{{name}}</td> 
             <td class="m">{{points}}</td> 
             </tr> 
@@ -184,14 +216,14 @@
                 </div>
 				<div id="contact" class="clear hi" style="display:none;">
                         <div class="plan"  onclick="dodajAktywne(this)">
-                        <h3 class="m" >Bala Sekar><span><img src="./images/1.JPG"></img></span></h3>         
+                        <h3 class="m" >Bala Sekar<span><img src="./images/1.JPG"></img></span></h3>         
                         <ul class="b1">
                         <li><b class="m">Ph:</b> 8899776655</li>
-                        <li><b class="m">Email:</b><i> bala@gmail.com</li>           
+                        <li><b class="m">Email:</b><i> <a href="mailto:bala@gmail.com">bala@gmail.com</a></li>           
                         </ul> 
                     </div>
                     <div class="plan most-popular " onclick="dodajAktywne(this)">
-                        <h3 class="m1">Selva kumar><span><img src="./images/1.JPG"></img></span></h3>       
+                        <h3 class="m1">Selva kumar<span><img src="./images/1.JPG"></img></span></h3>       
                         <ul class="b1">
                         <li><b class="m1">Ph:</b> 1122334455</li>
                         <li><b class="m1">Email:</b> selva@gmail.com</li>          

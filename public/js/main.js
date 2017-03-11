@@ -4,9 +4,10 @@
 //     $("#btn").click();
 //   }
 // });
-$("#subans").keyup(function(event) {
-    if (event.keyCode == 13) {
-        $("#btn").trigger('click');
+$( "#subans" ).keypress(function(event) {
+    if ( event.which == 13 ) {
+        event.preventDefault();
+        check();
     }
 })
 function check()

@@ -9,9 +9,9 @@ var Clues = require('../models/clues');
 
 //Get homepage
 router.get('/',ensureAuthenticated,function(req,res){
-	//console.log(user);
+	//console.log(req.user.qid);
 	var clues ={};
-	var query = {qid: "ChamberOfSecret_1"};
+	var query = {qid: req.user.qid};
 	//console.log(query);
 	Clues.findOne(query,function(err,d){
 		if(err)throw err;
@@ -27,7 +27,7 @@ router.get('/',ensureAuthenticated,function(req,res){
 	set.users=users;
 	//res.render('/',users);
 	//console.log(clues);
-	console.log(req.cookies.name);
+	//console.log(req.cookies.name);
  		
 	if(err)
 	console.log(err);
