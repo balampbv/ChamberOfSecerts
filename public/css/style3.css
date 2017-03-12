@@ -26,7 +26,11 @@
     height: 4500px;
     left: 0;
     top: 0;
-    background: white;
+     background: url("/images/mob.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     z-index: 50;
     visibility: hidden;
  
@@ -34,6 +38,11 @@
 #mobileview.visible
 {
 	visibility: visible;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 /* remove codrops styles and reset the whole thing */
 

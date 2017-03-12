@@ -1,0 +1,15 @@
+{"_id":{"$oid":"58c2db508ac5320ac53013bb"},"path":"public/questions/ChamberOfSecret_1.JPG","originalname":"ChamberOfSecret_1.JPG","points":"10","qid":"ChamberOfSecret_1","ans":"harrypotter","clues":"none","__v":0}
+{"_id":{"$oid":"58c2db778ac5320ac53013c9"},"path":"public/questions/FindMeIfUDare_2.JPG","originalname":"FindMeIfUDare_2.JPG","points":"10","qid":"FindMeIfUDare_2","ans":"targaryen","clues":"none","__v":0}
+{"_id":{"$oid":"58c2db998ac5320ac53013da"},"path":"public/questions/DecryptMe_3.JPG","originalname":"DecryptMe_3.JPG","points":"10","qid":"DecryptMe_3","ans":"trumpscript","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dbb78ac5320ac53013e2"},"path":"public/questions/EncryptOnMe_4.JPG","originalname":"EncryptOnMe_4.JPG","points":"10","qid":"EncryptOnMe_4","ans":"spacex","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dbdb8ac5320ac53013f3"},"path":"public/questions/RevealTheSecrets_5.JPG","originalname":"RevealTheSecrets_5.JPG","points":"10","qid":"RevealTheSecrets_5","ans":"rparthu","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dc678ac5320ac5301421"},"path":"public/questions/TearsOfThePhoenix_6.JPG","originalname":"TearsOfThePhoenix_6.JPG","points":"10","qid":"TearsOfThePhoenix_6","ans":"ans6","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dc8c8ac5320ac5301432"},"path":"public/questions/FloatingBroomStick_7.JPG","originalname":"FloatingBroomStick_7.JPG","points":"10","qid":"FloatingBroomStick_7","ans":"ans7","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dca88ac5320ac530143a"},"path":"public/questions/TomRiddle_8.JPG","originalname":"TomRiddle_8.JPG","points":"10","qid":"TomRiddle_8","ans":"ans8","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dcc28ac5320ac5301449"},"path":"public/questions/HarryFriendZoned_9.JPG","originalname":"HarryFriendZoned_9.JPG","points":"10","qid":"HarryFriendZoned_9","ans":"ans9","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dcef8ac5320ac5301459"},"path":"public/questions/LordVoldemort_10.JPG","originalname":"LordVoldemort_10.JPG","points":"10","qid":"LordVoldemort_10","ans":"ans10","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dd288ac5320ac530146f"},"path":"public/questions/HouseSlytherine_11.JPG","originalname":"HouseSlytherine_11.JPG","points":"10","qid":"HouseSlytherine_11","ans":"ans11","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dd428ac5320ac530147a"},"path":"public/questions/GodrickGriffindor_12.JPG","originalname":"GodrickGriffindor_12.JPG","points":"10","qid":"GodrickGriffindor_12","ans":"ans12","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dd5c8ac5320ac5301483"},"path":"public/questions/Basilisk_13.JPG","originalname":"Basilisk_13.JPG","points":"10","qid":"Basilisk_13","ans":"ans13","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dd778ac5320ac5301490"},"path":"public/questions/ParselTongue_14.JPG","originalname":"ParselTongue_14.JPG","points":"10","qid":"ParselTongue_14","ans":"ans14","clues":"none","__v":0}
+{"_id":{"$oid":"58c2dd998ac5320ac530149b"},"path":"public/questions/HarRy_PoTter_15.JPG","originalname":"HarRy_PoTter_15.JPG","points":"10","qid":"HarRy_PoTter_15","ans":"ans15","clues":"none","__v":0}
