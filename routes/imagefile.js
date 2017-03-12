@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var mongoose = require('mongoose');
+var moment = require('moment')
+
 var app=express();
 
 var User = require('../models/user');
@@ -155,45 +157,47 @@ router.post('/verify', function(req, res){
 			
 
 		//Model.update(query, { $set: { name: 'jason borne' }}, options, callback)
-		if(ans=="ans1")
+		if(ans=="harrypotter")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'FindMeIfUDare_2' }},function(err,data){
+		// 	var date = + new Date();
+		// 	console.log(date+"=========================================================");
+			User.findOneAndUpdate(u_query,{ $set : {"qid" : 'FindMeIfUDare_2' , "date":Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
 				console.log(data);
 		});
 		}
-		if(ans=="ans2")
+		if(ans=="targaryen")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'DecryptMe_3' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'DecryptMe_3' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
 				console.log(data);
 		});
 		}
-		if(ans=="ans3")
+		if(ans=="trumpscript")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'EncryptOnMe_4' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'EncryptOnMe_4' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
 				console.log(data);
 		});
 		}
-		if(ans=="ans4")
+		if(ans=="spacex")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'RevealTheSecrets_5' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'RevealTheSecrets_5' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
 				console.log(data);
 		});
 		}
-		if(ans=="ans5")
+		if(ans=="rparthu")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'TearsOfThePhoenix_6' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'TearsOfThePhoenix_6' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -202,7 +206,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans6")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'FloatingBroomStick_7' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'FloatingBroomStick_7' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -211,7 +215,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans7")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'TomRiddle_8' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'TomRiddle_8' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -220,7 +224,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans8")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'HarryFriendZoned_9' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'HarryFriendZoned_9' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -229,7 +233,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans9")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'LordVoldemort_10' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'LordVoldemort_10' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -238,7 +242,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans10")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'HouseSlytherine_11' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'HouseSlytherine_11' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -247,7 +251,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans11")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'GodrickGriffindor_12' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'GodrickGriffindor_12' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -256,7 +260,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans12")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'Basilisk_13' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'Basilisk_13' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -265,7 +269,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans13")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'ParselTongue_14' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'ParselTongue_14' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -274,7 +278,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans14")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'HarRy_PoTter_15' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'HarRy_PoTter_15' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else
@@ -283,7 +287,7 @@ router.post('/verify', function(req, res){
 		}
 		if(ans=="ans15")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'LevelCompleted' }},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'LevelCompleted' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			else

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var moment = require('moment')
 
 var Handlebars = require('express-handlebars');
 
@@ -9,30 +10,39 @@ var Clues = require('../models/clues');
 
 //Get homepage
 router.get('/',ensureAuthenticated,function(req,res){
-	//console.log(req.user.qid);
-	var clues ={};
 	var query = {qid: req.user.qid};
-	//console.log(query);
 	Clues.findOne(query,function(err,d){
-		if(err)throw err;
-		//console.log(d.clue);
+	if(err)throw err;
 	var clues = d.clue;
+	var max =d.max;
 	var comments=d.panel;
-	//console.log(d);
-	User.find({}, null, {sort: {points: 'descending'},limit:10}, function(err, users) {
-	
-	var set ={};
-	set.clues=clues;
-	set.comments=comments;
-	set.users=users;
-	//res.render('/',users);
-	//console.log(clues);
-	//console.log(req.cookies.name);
- 		
+	User.find({}, function(err, users) { 
 	if(err)
 	console.log(err);
-	
+	else
+	{
+		if(users)
+		{
+			users.sort(function (x, y) {
+    		var n = y.points - x.points;
+    		if (n !== 0) {
+        		return n;
+    			}
+
+    return moment(x.date).diff(y.date, 'seconds');
+});
+}
+console.log(users.slice(0,10));
+users = users.slice(0,10);
+		var set ={};
+		set.clues=clues;
+		set.max=max;
+		set.comments=comments;
+		set.users=users;
+		//console.log(users);	
+		
 	res.render('index',set);
+}
 		});
 
  });

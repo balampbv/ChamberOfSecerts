@@ -110,3 +110,8 @@ ul.sidebar-menu li a:hover i, ul.sidebar-menu li a:focus i {
 ul.sidebar-menu li a.active i {
     color: #fff;
 }
+
+.blur-it {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}

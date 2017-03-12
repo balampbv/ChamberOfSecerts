@@ -16,6 +16,10 @@ var ClueSchema = mongoose.Schema({
 	panel:{
 		type:String,
 		required:true
+	},
+	max:{
+		type:Number,
+		require:true
 	}	
 });
 

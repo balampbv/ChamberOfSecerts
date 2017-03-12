@@ -54,38 +54,38 @@ a:hover {
   position: relative;
   top: -2px;
 }
-.btn.text-left {
+.butt.text-left {
   text-align: left;
 }
-.btn-brand {
+.butt-brand {
   background: #37a6c4;
   color: #fff;
 }
-.btn-brand:hover {
+.butt-brand:hover {
   color: #fff;
   background: #2c849c;
 }
-.btn-dark {
+.butt-dark {
   background: #272727;
   color: #fff;
 }
-.btn-dark:hover {
+.butt-dark:hover {
   color: #fff;
   background: #2c849c;
 }
-.btn-red {
+.butt-red {
   background: #4f5362;
   color: #fff;
 }
-.btn-red:hover {
+.butt-red:hover {
   color: #fff;
   background: #383b46;
 }
-.btn-alt {
+.butt-alt {
   background: #f0f0f0;
   color: #222;
 }
-.btn-alt:hover {
+.butt-alt:hover {
   color: #fff;
   background: #2c849c;
 }
@@ -470,18 +470,18 @@ li {
   list-style: none;
 }
 /* Social Button Modifications */
-.btn {
+.butt {
   text-transform: none;
 }
-.btn-social > :first-child {
+.butt-social > :first-child {
   width: 42px;
   line-height: 46px;
 }
-.btn-social {
+.butt-social {
   padding-left: 58px;
 }
 /* Circle buttons */
-.btn-circle {
+.butt-circle {
   width: 30px;
   height: 30px;
   padding: 6px 0;
@@ -490,7 +490,7 @@ li {
   font-size: 12px;
   line-height: 1.428571429;
 }
-.btn-circle.btn-lg {
+.butt-circle.butt-lg {
   width: 50px;
   height: 50px;
   padding: 10px 16px;
@@ -498,7 +498,7 @@ li {
   font-size: 18px;
   line-height: 1.33;
 }
-.btn-circle.btn-xl {
+.butt-circle.butt-xl {
   width: 70px;
   height: 70px;
   padding: 10px 16px;
@@ -546,7 +546,7 @@ li {
 .brand {
   background: #262626 ;
   position: relative;
-  z-index: 3;
+  z-index: 20;
   position: fixed;
   width: 100%;
   top: 0;
@@ -566,7 +566,7 @@ li {
 .brand .logo img {
   height: 20px;
 }
-.brand .menu-btn {
+.brand .menu-butt {
   float: right;
   background: #191919;
   text-align: center;
@@ -860,7 +860,22 @@ text-decoration:none;
  body {
          overflow:hidden;
        }
+/*Main Content*/
 .content {
+    width: 630px;
+    height: 508px;
+    max-width: 630px;
+    background: #F2EEE2;
+    position: fixed;
+    top: 55%;
+    left: 45%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.25);
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0.8;
+}
+
+.rules_content {
     width: 530px;
     height: 408px;
     max-width: 530px;
@@ -873,7 +888,6 @@ text-decoration:none;
     transform: translate3d(-50%, -50%, 0);
     opacity: 0.8;
 }
-
 /* Let's get this party started */
 ::-webkit-scrollbar {
     width: 12px;
@@ -1027,7 +1041,12 @@ ul.input-list li {
   STYLE 1
 ============================================================ */
 .style-1 input[type="text"] {
-  display:inline; position:fixed; top:250px; right: 10%; left:10%; width:400px;
+  display: inline;
+    position: relative;
+    top: 50px;
+    right: -45%;
+    left:35%; 
+  width:400px;
   padding: 10px;
   border: solid 1px gainsboro;
   -webkit-transition: box-shadow 0.3s, border 0.3s;
@@ -1043,6 +1062,9 @@ ul.input-list li {
 }
 
 .btn {
+     position: relative;
+    top: 74px !important;
+    left: 39%!important;
     background-color: #3f3f3f;
     border: none;
     color: white;
@@ -1054,4 +1076,21 @@ ul.input-list li {
     margin: 4px 2px;
     cursor: pointer;
 }
+.butt
+{ font-size: 20px!important;
+   top: 414px!important;
+    left: 38%!important;
+    background-color: #3f3f3f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2em 1em 4em / 0.5em 3em;
 
+    
+}

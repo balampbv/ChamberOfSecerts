@@ -16,17 +16,21 @@ var UserSchema = mongoose.Schema({
 		type: String,
 		unique : true,
 		required:true
-
 	},
 	qid: {
 		type :String
 	},
 	points: {
-		type : String,
+		type : Number,
 		required:true
 
-	}
+	},
 	
+	
+	date:{
+	 type: Date, 
+	 default: Date.now }
+
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);

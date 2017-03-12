@@ -10,6 +10,9 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+var moment = require('moment');
+var loop  = require('handlebars-loop');
+
 
 mongoose.connect('mongodb://localhost/cos'); 
 var db = mongoose.connection;
@@ -28,43 +31,8 @@ Handlebars.registerHelper("inc", function(value, options)
 {
     return parseInt(value) + 1;
 });
-
-// View Engine
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout:'dashlayout'}));
-app.set('view engine', 'handlebars');
-
-
-// BodyParser Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-
-// set a cookie
-app.use(function (req, res, next) {
-  // check if client sent cookie
-  var cookie = req.cookies.cookieName;
-  if (cookie === undefined)
-  {
-    // no: set a new cookie
-    var randomNumber=Math.random().toString();
-    randomNumber=randomNumber.substring(2,randomNumber.length);
-    res.cookie('cookieName',randomNumber, { maxAge: 900000, httpOnly: true });
-    console.log('cookie created successfully');
-  } 
-  else
-  {
-    // yes, cookie was already present 
-    //console.log('cookie exists', cookie);
-  } 
-  next(); // <-- important!
-});
-
 // helper
-exphbs.create({
-  // Specify helpers which are only registered on this instance.
-  helpers: {
-    math: function(lvalue, operator, rvalue, options) { 
+Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) { 
        lvalue = parseFloat(lvalue);
     rvalue = parseFloat(rvalue);
         
@@ -76,8 +44,32 @@ exphbs.create({
         "%": lvalue % rvalue
     }[operator];
   }
-}
+
+);
+
+Handlebars.registerHelper('times', function(n, qid, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i)
+        accum += block.fn(qid+'['+i+']');
+   // return accum;
+   console.log(accum);
+   return accum;
 });
+
+Handlebars.registerHelper("log", function(something) {
+  console.log(something);
+});
+// View Engine
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', exphbs({defaultLayout:'dashlayout'}));
+app.set('view engine', 'handlebars');
+
+
+// BodyParser Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));

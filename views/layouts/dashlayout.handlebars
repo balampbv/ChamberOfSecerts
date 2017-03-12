@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" class="no-js">
-
+<!-- FB Comments Plugin  -->
 <head>
   <meta property="fb:app_id" content="1752624775053344" />
   <meta property="fb:admins" content="100006472131871" />
@@ -44,26 +44,19 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/clues.css">
 
-    <!-- Gritter CSS -->
-<link rel="stylesheet" type="text/css" href="/css/jquery.gritter.css" />
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="/js/jquery.gritter.js"></script>
-
-    
 </head>
-<body background="/images/h3.jpg" class="fit" > 
-<div id="fb-root"></div>
-<!--FB plugin -->
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1752624775053344";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
-	<div class="brand clearfix" >
+<body background="/images/ll.jpg" class="fit" > 
+        <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1752624775053344";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+ 
+<div class="brand clearfix" >
 		<a href="#" class="logo"><img style="border:0px; width:130px; height:60px " src="img/logo1.png" class="img-responsive"  alt=""></a>
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
 		<ul class="ts-profile-nav">
@@ -78,181 +71,223 @@
 				</ul>
 			</li>
 		</ul>
-	</div>
+</div>
 
 
-	<!-- Navigation bar -->
-	<div class="ts-main-content">
-			
+<!-- Navigation bar -->
+<div class="ts-main-content">
 		<nav class="main-menu">
 			<ul class="ts-sidebar-menu" >
 				<li  class="open" >
-                <a href="/" id="showhome"><i class="fa fa-home fa-fw"></i>
-                    <span class="nav-text">   Home   </span>
-                </a></li>
+                    <a href="/" id="showhome">
+                        <i class="fa fa-home fa-fw"></i>
+                        <span class="nav-text">   Home   </span>
+                    </a>
+                </li>
 				<li >
-                <a href="#rules" id="showrules"><i class="fa fa-bullhorn"></i>
-                <span class="nav-text"> Rules</span>
-                    </a></li>
-				<li><a href="#clues" id="showclues"><i class="fa fa-edit"></i>
-                <span class="nav-text">Clues</span>
-                    </a></li>
-				<li><a href="#leaderboard" id="showleader"><i class="fa fa-group "></i>
-                <span class="nav-text">    Leaderboard</span>
-                    </a></li>
-				<li><a href="#panel" id="showpanel"><i class="fa fa-comments-o" ></i>
-                <span class="nav-text"> Discussion panel</span>
-                </a></li>
-                <li><a href="#contact" id="showcontact"><i class="fa fa-paper-plane-o"></i>
-                <span class="nav-text">  Contact</span>
-                </a></li>
+                    <a href="#rules" id="showrules">
+                        <i class="fa fa-bullhorn"></i>
+                        <span class="nav-text"> Rules</span>
+                    </a>
+                </li>
+				<li>
+                    <a href="#clues" id="showclues">
+                        <i class="fa fa-edit"></i>
+                        <span class="nav-text">Clues</span>
+                    </a>
+                </li>
+				<li>
+                <a href="#leaderboard" id="showleader">
+                    <i class="fa fa-group "></i>
+                    <span class="nav-text">    Leaderboard</span>
+                </a>
+                </li>
+				<li>
+                    <a href="#panel" id="showpanel">
+                        <i class="fa fa-comments-o" ></i>
+                        <span class="nav-text"> Discussion panel</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" id="showcontact">
+                        <i class="fa fa-paper-plane-o"></i>
+                        <span class="nav-text">  Contact</span>
+                    </a>
+                </li>
 			</ul>
 		</nav>
 	</div>
-				
-
+<div class="modal-wrapper">
+  <div class="modal" >
+    <div>
     
-<!--             <div id="home" class="content">Home<img class="img-wrapper" src ="./questions/{{qid}}.JPG"></img></div>
--->              
-<div style="">
-<main >
+        <script type="text/javascript">
+            var imgAr = ['1.jpg','2.jpg','3.jpg','4.gif','5.jpg'];
+            var path = 'img/'; // default path here
+            var num = Math.floor( Math.random() * imgAr.length );
+            var img = imgAr[ num ];
+            var imgStr = '<img src="' + path + img + '" alt = "">';
+            document.write(imgStr); document.close();
 
-   <div id="home" qid="{{user.qid}}" points="{{user.points}}" class="content"><img class="img-wrapper" src ="./questions/{{user.qid}}.JPG"></img>
-                    <form>
-                    <section>
-                    <ul class="input-list style-1 clearfix ">
-                    <li>
-                    <input  type="text" name="subans" id="subans" placeholder=":answer" required>
-                    </ul>
-                    </li>
-                    <input type="button" class="btn m" style=" display:inline; position:absolute; top:320px; left:35%;" value="Submit" id="btn" onclick="check();">
+        </script>
 
-                    </section>
-                    </form>
-                    </div>
-				<div id="rules"  class="content" style="background-image: url(/images/11.jpg); 
-                opacity:0.8; border: 1px solid black; display:none;" >                      
-                <div class="m" style="text-align:center; font-size: 38px !important;">>Rules<br><br>
-                </div>
-                <ol class="m1"  style="float:left">
-                  &nbsp;&nbsp;      1.  Don't Copy from others<br>
-                  &nbsp;&nbsp;          2.  Any type of malpractice will lead to Disqualification   </ol>
-                </div>
-                  <div id="clues" class="clues" style="display:none;">
-                      <ul class="tabs m clearfix" data-tabgroup="first-tab-group">
-                        <li><a href="#tab1" class="active">Clue 1</a></li>
-                        <li><a href="#tab2">Clue 2</a></li>
-                        <li><a href="#tab3">Clue 3</a></li>
-                      </ul>
-                      <section id="first-tab-group" class="tabgroup m">
-                        <div id="tab1">
-                          <p>>{{clues}}<</p>
-                        </div>
-                        <div id="tab2">
-                          <p>
-                              Will be updated Soon!!!
-                          </p>
-                        </div>
-                        <div id="tab3">
-                          <p>
-                              Will be updated Soon!!!
-                         </p>
-                        </div>
-                      </section>
+        </div>
+    </div>
 </div>
-
-<div id="leader"  class="lead_cen" style="display:none;">
-<script type="text/javascript">
-Handlebars.registerHelper('eachData', function(context, options) {
-      var fn = options.fn, inverse = options.inverse, ctx;
-      var ret = "";
-
-      if(context && context.length > 0) {
-        for(var i=0, j=context.length; i<j; i++) {
-          ctx = Object.create(context[i]);
-          ctx.index = i;
-          ret = ret + fn(ctx);
-        }
-      } else {
-        ret = inverse(this);
-      }
-      return ret;
-    }); 
-
-Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
-    lvalue = parseFloat(lvalue);
-    rvalue = parseFloat(rvalue);
-
-    return {
-        "+": lvalue + rvalue
-    }[operator];
-});
-</script>
-            <table>
-              <thead class="p">
-                <tr>
-                  <th>#</th>
-                  <th>Wizard name</th>
-                  <th>Points</th>
-                </tr>
-              </thead>
-            <tbody> 
-
-        {{#each users}} 
-        <tr> 
-
-            <td>  {{ inc @index }}</td>
-            <td class="b" style="font-size:17px;">{{name}}</td> 
-            <td class="m">{{points}}</td> 
-            </tr> 
-           
-        {{/each}} 
-    </tbody> 
-</table>            
-                </div>
-				<div id="panel" class="panel-content" style="display:none;">
-                <div class="fb-comments" data-href="https://chamber-selvadurairaj.c9users.io/#{{comments}}" data-numposts="10"></div>
-            
-                </div>
-				<div id="contact" class="clear hi" style="display:none;">
-                        <div class="plan"  onclick="dodajAktywne(this)">
-                        <h3 class="m" >Bala Sekar<span><img src="./images/1.JPG"></img></span></h3>         
-                        <ul class="b1">
-                        <li><b class="m">Ph:</b> 8899776655</li>
-                        <li><b class="m">Email:</b><i> <a href="mailto:bala@gmail.com">bala@gmail.com</a></li>           
-                        </ul> 
-                    </div>
-                    <div class="plan most-popular " onclick="dodajAktywne(this)">
-                        <h3 class="m1">Selva kumar<span><img src="./images/1.JPG"></img></span></h3>       
-                        <ul class="b1">
-                        <li><b class="m1">Ph:</b> 1122334455</li>
-                        <li><b class="m1">Email:</b> selva@gmail.com</li>          
-                        </ul>    
+          
+<div id="blur_div">  
+    <div style="">
+        <main>
+           <div id="home"  class="content">
+                <div id="ques" style="width:inherit; background-color:white; height:300px;overflow: hidden;">
+                    <div style="width:1000px;">
+                
+                        {{#times max user.qid}}
+                        <img  class="" alt="Nice Try :p" src ="./questions/{{this}}.JPG"></img>
+                       {{/times}}
                     </div>
 
-                </div>            
-                </div>
-				<div id="profile"  style="background-image: url(/images/11.jpg); 
-  opacity:0.8; border: 1px solid black; display:none;">
-                                <div class="profile">
-                                    <div class="avatar-flip">
-                                    <img src="./images/profile.jpg" height="150" width="150">
-                                    <img src="./images/giphy.gif" height="150" width="150">
-                                    </div>
-                                    <div class="l"> 
+
+               </div>
+                      <form>
+                            <section>
+                                    <ul class="input-list style-1 clearfix ">
+                                        <li>
+                                            <input  type="text" name="subans" id="subans" placeholder=":answer" required>
+                                        </li>
+                                    </ul>
+                                    <input type="button" class="butt b" style=" display:inline; position:absolute; top:320px; left:35%;" value="Submit" id="btn" onclick="check();">
+                            </section>
+                      </form>
+            </div>
+
+
+            <div id="rules"  class="rules_content" style="background-image: url(/images/11.jpg); 
+                        opacity:0.8; border: 1px solid black; display:none;">                      
+                        <div class="m" style="text-align:center; font-size: 36px !important;">&lt;Rules<br><br>
+                        </div>
+                        <ol class="m1"  style="float:left">
+                         &nbsp;&nbsp;      1. Use ctrl+shift+i as much as possible<br>
+                         &nbsp;&nbsp;       2.  Any type of malpractice will lead to Disqualification  <br>
+                         &nbsp;&nbsp;       3.  Being just a GooGler is not enough!!! <br>
+                         &nbsp;&nbsp;       4.  Mind your language in the dicussion panel   <br>
+                         &nbsp;&nbsp;       5. Copy cats are strictly prohibited  <br>
+                         &nbsp;&nbsp;       6.Kindly, follow the above "RULES" <br>
+                        
+                        
+                        </ol>
+            </div>
+                         
+
+
+            <div id="clues" class="clues" style="display:none;">
+                          <ul class="tabs m clearfix" data-tabgroup="first-tab-group">
+                            <li><a href="#tab1" class="active">Clue 1</a></li>
+                            <li><a href="#tab2">Clue 2</a></li>
+                            <li><a href="#tab3">Clue 3</a></li>
+                          </ul>
+                          <section id="first-tab-group" class="tabgroup m">
+                                <div id="tab1">
+                                    <p>&lt;{{clues}}&gt;</p>
+                                </div>
+                                <div id="tab2">
+                                      <p>
+                                          Will be updated Soon!!!
+                                      </p>
+                                </div>
+                                <div id="tab3">
+                                      <p>
+                                          Will be updated Soon!!!
+                                     </p>
+                                </div>
+                         </section>
+            </div>
+
+            <div id="leader"  class="lead_cen" style="display:none;">
+
+                <table>
+                        <thead class="p">
+                            <tr>
+                              <th>#</th>
+                              <th>Wizard name</th>
+                              <th>Points</th>
+                            </tr>
+                        </thead>
+                    <tbody> 
+
+                    {{#each users}} 
+                    <tr> 
+
+                        <td>  {{ inc @index }}</td>
+                        <td class="b" style="font-size:17px;">{{name}}</td> 
+                        <td class="m">{{points}}</td> 
+                        </tr> 
+                       
+                    {{/each}} 
+                    </tbody> 
+                </table>            
+            </div>
+            				
+            <div id="panel" class="panel-content" style="display:none;">
+                            <div class="fb-comments" data-href="https://chamber-selvadurairaj.c9users.io/#{{comments}}" data-numposts="10">    
+                            </div>
+                        
+            </div>
+
+
+        	<div id="contact" class="clear hi" style="display:none;">
+                            <div class="plan most-popular"  onclick="dodajAktywne(this)">
+                                <h3 class="m" >Bala Sekar<span><img src="./images/bala.JPG"></img></span></h3>         
+                                <ul class="b1">
+                                <li><b class="m">Ph:</b> 9965999159</li>
+                                <li><b class="m">Email:<br><i> <a href="mailto:balampbv007@gmail.com">Bala</a></li>           
+                                </ul> 
+                            </div>
+                            <div class="plan  " onclick="dodajAktywne(this)">
+                                <h3 class="m1">Selva kumar<span><img src="./images/selva.jpg"></img></span></h3>       
+                                <ul class="b1">
+                                <li><b class="m">Ph:</b> 8056837725</li>
+                                <li><b class="m">Email:<i> <a href="mailto:dselvaarni@gmail.com">SelvaDSK</a>          
+                                </ul>    
+                            </div>
+                            <div class="plan  " onclick="dodajAktywne(this)">
+                                <h3 class="m1">Aswin<span><img src="./images/aswin.JPG"></img></span></h3>       
+                                <ul class="b1">
+                                <li><b class="m">Ph:</b> 8754295209</li>
+                                <li><b class="m">Email:<i> <a href="mailto:aswinmaddy98@gmail.com">Aswinmaddy</a>          
+                                </ul>    
+                            </div>
+                            <div class="plan most-popular " onclick="dodajAktywne(this)">
+                                <h3 class="m1">Prasadh<span><img src="./images/prasadh.jpg"></img></span></h3>       
+                                <ul class="b1">
+                                <li><b class="m">Ph:</b> 9976548249</li>
+                                <li><b class="m">Email:<i> <a href="mailto:prasadh10121997@gmail.com">PrasadhRocks</a>          
+                                </ul>    
+                            </div>
+
+            </div>
+
+
+        	<div id="profile"  style="background-image: url(/images/11.jpg); opacity:0.8; border: 1px solid black; display:none;">
+                    <div class="profile">
+                            <div class="avatar-flip">
+                                <img src="./images/profile.jpg" height="150" width="150" >
+                                <img src="./images/giphy.gif" height="150" width="150" style= "opacity:0.96";>
+                            </div>
+                            <div class="l"> 
                                    <p>Wizard Name : <span class="b1">{{user.name}}</span><br><br>
                                    Score  : <span class="b1">{{user.points}}</p>
                                    </div>
                                     <p class="l">Level Completed:</p>
                                     <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{user.qid}}" aria-valuemin="0" aria-valuemax="5" style="width:{{user.points}}%">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{user.qid}}" aria-valuemin="0" aria-valuemax="5" style="width:{{math user.points "*" 0.666}}%">
                                    
-                                    </div>
-                
-                                </div>
-                </div>
-    </main>            
-
+                            </div>
+                        
+                        </div>
+            </div>
+        </main>            
+    </div>
 </div>
 		
 	<!-- Loading Scripts -->
@@ -262,21 +297,6 @@ Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
 	<script src="/js/main.js"></script>
      <script src="/js/index.js"></script>
 
-     <script type="text/javascript">
-
-    $(function(){
-    var unique_id = $.gritter.add({
-                title: 'welcome to chamber of secrets!',
-                text: 'explore the secrets',
-                image: '/images/3.jpg',
-                sticky: true,
-                time: '',
-                class_name: 'my-sticky-class'
-            });
-            return false;
-        });
-        
-</script>
 <!--For hiding and showing selected div's-->
 
 <script src="https://code.jquery.com/jquery-1.7.2.js"></script>
@@ -355,13 +375,6 @@ $(function() {
     });
 });
 });
-$.gritter.add({
-  // heading of the notification
-  title: 'This is a sticky notice!',
-  // the text inside the notification
-  text: 'Your message here'
-});
-
 </script>
 
 <!-- For contact Event -->
@@ -375,7 +388,25 @@ for(var i=0;i<test.length;i++){
 }
 
 </script>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        //console.log(max);
+    var  q={{max}};
+    $('#ques img').attr('class',"");
+    if(q==1)
+    {
+    $('#ques img').addClass('one');
+    }
+    if(q==2)
+    {
+    $('#ques img').addClass('two');
+    }
+    if(q==3)
+    {
+    $('#ques img').addClass('three');
+    }
+});    
+</script>
 		
 </body>
 

@@ -4,6 +4,11 @@
 //     $("#btn").click();
 //   }
 // });
+$('.modal-wrapper').on('click', function(e) {
+    e.preventDefault();
+    $('.modal-wrapper').removeClass('open');
+    $('#blur_div').removeClass('blur-it');
+  });
 $( "#subans" ).keypress(function(event) {
     if ( event.which == 13 ) {
         event.preventDefault();
@@ -12,27 +17,32 @@ $( "#subans" ).keypress(function(event) {
 })
 function check()
 {
-		var qid = $("#home").attr("qid");
-	    var points =$("#home").attr("points");
+		//var qid = $("#home").attr("qid");
+	    //var points =$("#home").attr("points");
 		var subans = $("#subans").val();
-		var query = {};
-		query.qid = qid;
-		query.subans = subans;
-		query.points = points;
-		console.log(query);
+        var query = {};
+		//query.qid = qid;
+        
+		subans =$.trim(subans);
+        query.subans = subans.split(" ").join("").toLowerCase(); 
+        
+        console.log(query);
+		//query.points = points;
 	    $.post("/i/verify", query, function(data) {
-	    	if(data=="correct")
+
+            
+	    	if(data == "correct")
 	    	{
 	    		location.reload();
 	    	}
 	    	else
 	    	{
-	    		alert("Incorrect");
+                $('.modal-wrapper').addClass('open');
+                $('#blur_div').addClass('blur-it');
 	    	}
 	    });
 	    
 }
-
 
 function checkPass()
 {

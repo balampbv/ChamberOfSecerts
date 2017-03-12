@@ -1,12 +1,13 @@
 
 .hi{
 	position: fixed ;
-  width: 400px ;
-  height: 400px ;
+  width: 200px ;
+  height: 200px ;
   z-index: 10;
   top:10% !important;
-  left: 29% !important;	
+  left: 22% !important;	
   margin: -100px 0 0 -150px ;
+  opacity: 0.8 !important;
 }
 #contact {
 	margin: 100px auto;
@@ -21,7 +22,7 @@
 	border: 1px solid #ddd;
 	color: #333;
 	padding: 20px;
-	width: 300px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */      
+	width: 170px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */      
 	height: 320px;
 	float: left;
 	position: relative;
