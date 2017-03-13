@@ -13,12 +13,15 @@ router.get('/',ensureAuthenticated,function(req,res){
 	var query = {qid: req.user.qid};
 	Clues.findOne(query,function(err,d){
 	if(err)throw err;
-	var clues = d.clue;
+	var clue1 = d.clue1;
+	var clue2 = d.clue2;
+	var clue3 = d.clue3;
+	
 	var max =d.max;
 	var comments=d.panel;
 	User.find({}, function(err, users) { 
 	if(err)
-	console.log(err);
+	console.log(err);	
 	else
 	{
 		if(users)
@@ -32,14 +35,16 @@ router.get('/',ensureAuthenticated,function(req,res){
     return moment(x.date).diff(y.date, 'seconds');
 });
 }
-console.log(users.slice(0,10));
+//console.log(users.slice(0,10));
 users = users.slice(0,10);
 		var set ={};
-		set.clues=clues;
+		set.clue1=clue1;
+		set.clue2=clue2;
+		set.clue3=clue3;
 		set.max=max;
 		set.comments=comments;
 		set.users=users;
-		//console.log(users);	
+		//console.log(set);	
 		
 	res.render('index',set);
 }
@@ -54,7 +59,7 @@ users = users.slice(0,10);
  	}
  	else{
  	//req.flash('error_msg','You are not logged in');
- 	res.redirect('/users/login');
+ 	res.redirect('/users/indexpage');
  	}
  }
 

@@ -52,7 +52,7 @@ Handlebars.registerHelper('times', function(n, qid, block) {
     for(var i = 0; i < n; ++i)
         accum += block.fn(qid+'['+i+']');
    // return accum;
-   console.log(accum);
+   //console.log(accum);
    return accum;
 });
 

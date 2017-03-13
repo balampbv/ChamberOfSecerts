@@ -43,7 +43,7 @@
     <!-- Clues css -->
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/clues.css">
-
+    
 </head>
 <body background="/images/ll.jpg" class="fit" > 
         <div id="fb-root"></div>
@@ -122,7 +122,7 @@
     <div>
     
         <script type="text/javascript">
-            var imgAr = ['1.jpg','2.jpg','3.jpg','4.gif','5.jpg'];
+            var imgAr = ['1.gif','2.gif','3.gif','4.gif','5.gif','6.gif'];
             var path = 'img/'; // default path here
             var num = Math.floor( Math.random() * imgAr.length );
             var img = imgAr[ num ];
@@ -167,11 +167,11 @@
                         <div class="m" style="text-align:center; font-size: 36px !important;">&lt;Rules<br><br>
                         </div>
                         <ol class="m1"  style="float:left">
-                         &nbsp;&nbsp;      1. Use ctrl+shift+i as much as possible<br>
-                         &nbsp;&nbsp;       2.  Any type of malpractice will lead to Disqualification  <br>
-                         &nbsp;&nbsp;       3.  Being just a GooGler is not enough!!! <br>
-                         &nbsp;&nbsp;       4.  Mind your language in the dicussion panel   <br>
-                         &nbsp;&nbsp;       5. Copy cats are strictly prohibited  <br>
+                         &nbsp;&nbsp;      1. Parterup with Google<br>
+                         &nbsp;&nbsp;       2. Images can be clues sometimes  <br>
+                         &nbsp;&nbsp;       3.  Watch what you say on forum <br>
+                         &nbsp;&nbsp;       4. Don't worry about case sensitive and space   <br>
+                         &nbsp;&nbsp;       5. Don't post answer on the forum <br>
                          &nbsp;&nbsp;       6.Kindly, follow the above "RULES" <br>
                         
                         
@@ -188,16 +188,16 @@
                           </ul>
                           <section id="first-tab-group" class="tabgroup m">
                                 <div id="tab1">
-                                    <p>&lt;{{clues}}&gt;</p>
+                                    <p>&lt;{{clue1}}&gt;</p>
                                 </div>
                                 <div id="tab2">
                                       <p>
-                                          Will be updated Soon!!!
+                                       {{clue2}}
                                       </p>
                                 </div>
                                 <div id="tab3">
                                       <p>
-                                          Will be updated Soon!!!
+                                      {{clue3}}
                                      </p>
                                 </div>
                          </section>
@@ -294,14 +294,15 @@
 	<script src="/js/jquery.min.js"></script>
 	<script src="/js/bootstrap-select.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/main.js"></script>
+    <script src="/js/main.js"></script>
      <script src="/js/index.js"></script>
+      <script src="/js/notify.min.js"></script>
 
 <!--For hiding and showing selected div's-->
 
-<script src="https://code.jquery.com/jquery-1.7.2.js"></script>
 <script type="text/javascript">
 $( document ).ready(function() {
+
 $(function() {
     $('#showhome').click(function() {
          $('#home').show();
@@ -407,7 +408,7 @@ for(var i=0;i<test.length;i++){
     }
 });    
 </script>
-		
+
 </body>
 
 </html>

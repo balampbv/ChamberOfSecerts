@@ -140,158 +140,141 @@ router.post('/verify', function(req, res){
 
 //	console.log(req.body);
 	var subans = req.body.subans;
-	console.log(subans);
+	//console.log(subans);
 	var query = {qid: req.user.qid};
 	var u_query = {email :req.user.email};
-	console.log(u_query);
-	console.log(query);
+	//console.log(u_query);
+	//console.log(query);
 	var points_query = {points: req.user.points};
 	console.log(points_query);
 	Image.findOne(query,function(err,data){
 		//console.log(qid);
 	var ans = data.ans;
-	// console.log(data);
+	//// console.log(data);
 	console.log(data.ans);
 	if(ans == subans)
 	{
 			
 
 		//Model.update(query, { $set: { name: 'jason borne' }}, options, callback)
-		if(ans=="harrypotter")
+		if(ans=="chamberofsecrets")
 		{
 		// 	var date = + new Date();
 		// 	console.log(date+"=========================================================");
 			User.findOneAndUpdate(u_query,{ $set : {"qid" : 'FindMeIfUDare_2' , "date":Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
-		});
+			});
 		}
-		if(ans=="targaryen")
+		if(ans=="fantasticbeastsandwheretofindthem")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'DecryptMe_3' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
-		});
+				});
 		}
-		if(ans=="trumpscript")
+		if(ans=="cherami")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'EncryptOnMe_4' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="spacex")
+		if(ans=="bobdylan")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'RevealTheSecrets_5' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="rparthu")
+		if(ans=="sandstorminnings")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'TearsOfThePhoenix_6' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans6")
+		if(ans=="pangrams")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'FloatingBroomStick_7' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans7")
+		if(ans=="hyugens")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'TomRiddle_8' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans8")
+		if(ans=="ericcantona")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'HarryFriendZoned_9' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans9")
+		if(ans=="unknown")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'LordVoldemort_10' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans10")
+		if(ans=="ozymandias")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'HouseSlytherine_11' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans11")
+		if(ans=="leshorriblescernettes")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'GodrickGriffindor_12' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans12")
+		if(ans=="oneshotonekill")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'Basilisk_13' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans13")
+		if(ans=="femmefatale")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'ParselTongue_14' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans14")
+		if(ans=="waroftheroses")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'HarRy_PoTter_15' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
-		if(ans=="ans15")
+		if(ans=="wikipedia1")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'LevelCompleted' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
-			else
-				console.log(data);
+			
 		});
 		}
 		

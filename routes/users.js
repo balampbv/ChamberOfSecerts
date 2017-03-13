@@ -4,6 +4,10 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
+//Front page
+router.get('/indexpage', function(req, res){
+	res.render('index',{layout:'front.handlebars'});
+});
 
 // Register
 router.get('/register', function(req, res){
@@ -38,7 +42,7 @@ router.post('/register', function(req, res){
 	User.getUserBymail(email, function(err, m){
    	if(err) throw err;
    			if(m){
-   				console.log(m);
+   				//console.log(m);
    				req.flash('error_msg', 'Email already exits!!!');
 
 				res.redirect('/users/register');

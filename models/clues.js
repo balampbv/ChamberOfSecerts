@@ -8,11 +8,22 @@ var ClueSchema = mongoose.Schema({
 	qid: {
 		type :String
 	},
-	clue: {
+	clue1: {
 		type : String,
 		required:true
 
 	},
+	clue2: {
+		type : String,
+		required:true
+
+	},
+	clue3: {
+		type : String,
+		required:true
+
+	},
+	
 	panel:{
 		type:String,
 		required:true
