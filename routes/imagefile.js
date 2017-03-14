@@ -205,7 +205,7 @@ router.post('/verify', function(req, res){
 			
 		});
 		}
-		if(ans=="hyugens")
+		if(ans=="huygens")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'TomRiddle_8' ,date:Date.now()}},function(err,data){
 			if(err)
