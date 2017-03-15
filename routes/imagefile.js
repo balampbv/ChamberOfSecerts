@@ -295,7 +295,24 @@ router.post('/verify', function(req, res){
 			
 		});
 		}
+		
 		if(ans=="santa'sreindeer")
+		{
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'ProfDumbledore_19' ,date:Date.now()}},function(err,data){
+			if(err)
+				console.log(err);
+			
+		});
+		}
+		if(ans=="alongwayhome")
+		{
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'AvadaKedavara_20' ,date:Date.now()}},function(err,data){
+			if(err)
+				console.log(err);
+			
+		});
+		}
+		if(ans=="fallenastronaut")
 		{
 			User.findOneAndUpdate(u_query,{ $set : {qid : 'LeVeLComPletEd_!998' ,date:Date.now()}},function(err,data){
 			if(err)
