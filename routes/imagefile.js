@@ -269,9 +269,35 @@ router.post('/verify', function(req, res){
 			
 		});
 		}
-		if(ans=="wikipedia1")
+		if(ans=="wikipedia")
 		{
-			User.findOneAndUpdate(u_query,{ $set : {qid : 'LevelCompleted' ,date:Date.now()}},function(err,data){
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'LuciusMalfoy_16' ,date:Date.now()}},function(err,data){
+			if(err)
+				console.log(err);
+			
+		});
+		}
+		
+		if(ans=="hochiminhtrail")
+		{
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'JKRowling_17' ,date:Date.now()}},function(err,data){
+			if(err)
+				console.log(err);
+			
+		});
+		}
+
+		if(ans=="venividivici")
+		{
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'SwordOfGG_18' ,date:Date.now()}},function(err,data){
+			if(err)
+				console.log(err);
+			
+		});
+		}
+		if(ans=="santa'sreindeer")
+		{
+			User.findOneAndUpdate(u_query,{ $set : {qid : 'LeVeLComPletEd_!998' ,date:Date.now()}},function(err,data){
 			if(err)
 				console.log(err);
 			
