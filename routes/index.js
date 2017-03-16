@@ -44,6 +44,10 @@ else
 	});
 	}
   }
+  count= Object.keys(users).length;
+
+
+  //console.log(count);
   //console.log(users.slice(0,10));
 users = users.slice(0,10);
 		var set ={};
@@ -53,6 +57,7 @@ users = users.slice(0,10);
 		set.max=max;
 		set.comments=comments;
 		set.users=users;
+		set.count=count;
 		//console.log(set);	
 		
 	res.render('index',set);
