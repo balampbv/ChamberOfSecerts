@@ -49,6 +49,8 @@
     <!-- Clues css -->
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/clues.css">
+    <link rel="stylesheet" href="/css/jquery.growl.css
+">
     
 </head>
 <body background="/images/ll.jpg" class="fit" > 
@@ -307,10 +309,12 @@
 	<script src="/js/bootstrap.min.js"></script>
     <script src="/js/main.js"></script>
      <script src="/js/index.js"></script>
-      <script src="/js/notify.min.js"></script>
+       <script src="/js/jquery.growl.js"></script>
 
 <!--For hiding and showing selected div's-->
-
+<script type="text/javascript">
+  $.growl.notice({ title: "Info", message: "The Event will end on 8 P.M" });
+</script>
 <script type="text/javascript">
 $( document ).ready(function() {
 
@@ -400,6 +404,8 @@ for(var i=0;i<test.length;i++){
 }
 
 </script>
+
+
 <script type="text/javascript">
     $(document).ready(function(){
         //console.log(max);
