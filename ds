@@ -1,0 +1,100 @@
+db.files.insert({path:"public/questions/LuciusMalfoy_16",originalname:"LuciusMalfoy_16",points:"10",qid:"LuciusMalfoy_16",ans:"hochiminhtrail"})
+
+db.files.insert({path:"public/questions/JKRowling_17",originalname:"JKRowling_17",points:"10",qid:"JKRowling_17",ans:"venividivici"})
+
+db.files.insert({path:"public/questions/SwordOfGG_18",originalname:"SwordOfGG_18",points:"10",qid:"SwordOfGG_18",ans:"santa'sreindeer"})
+
+db.files.insert({path:"public/questions/ProfDumbledore_19",originalname:"ProfDumbledore_19",points:"10",qid:"ProfDumbledore_19",ans:"alongwayhome"}
+
+db.files.insert({path:"public/questions/AvadaKedavara_20",originalname:"AvadaKedavara_20",points:"10",qid:"AvadaKedavara_20",ans:"fallenastronaut"}
+
+
+	db.clues.insert({qid:"LuciusMalfoy_16",clue1:"Will be Updated soon",clue2:"Will be Updated soon",clue3:"Will be Updated soon",panel:"comment16",max:2})
+
+
+db.clues.insert({qid:"JKRowling_17",clue1:"Will be Updated soon",clue2:"Will be Updated soon",clue3:"Will be Updated soon",panel:"comment17",max:2})
+
+
+db.clues.insert({qid:"SwordOfGG_18",clue1:"Will be Updated soon",clue2:"Will be Updated soon",clue3:"Will be Updated soon",panel:"comment18",max:3})
+
+db.clues.insert({qid:"ProfDumbledore_19",clue1:"Will be Updated soon",clue2:"Will be Updated soon",clue3:"Will be Updated soon",panel:"comment19",max:2})
+
+db.clues.insert({qid:"AvadaKedavara_20",clue1:"Will be Updated soon",clue2:"Will be Updated soon",clue3:"Will be Updated soon",panel:"comment20",max:2})
+
+db.clues.update({qid: "LordVoldemort_10"},{$set:{clue1:"A poem",clue2:"The first image points to a tv series"}})
+
+db.clues.update({qid: "HouseSlytherine_11"},{$set:{clue1:"A pop group"}})
+
+
+db.clues.update({qid: "GodrickGriffindor_12"},{$set:{clue1:"Motto"}})
+//
+
+db.clues.update({qid: "ChamberOfSecret_1"},{$set:{clue2:"Harry potter's Second part "}})
+
+
+db.clues.update({qid: "FindMeIfUDare_2"},{$set:{clue2:"Sequel of Harry Potter "}})
+
+db.clues.update({qid: "DecryptMe_3"},{$set:{clue2:"Recipient of the award"}})
+
+
+db.clues.update({qid: "EncryptOnMe_4"},{$set:{clue2:"The person who won all three prestigious awards"}})
+
+db.clues.update({qid: "RevealTheSecrets_5"},{$set:{clue1:"A major feat was acheived by the batsman."}})
+
+db.clues.update({qid: "TearsOfThePhoenix_6"},{$set:{clue1:"Every letter"}})
+
+
+
+db.clues.update({qid: "FloatingBroomStick_7"},{$set:{clue2:"A Probe"}})
+
+
+db.clues.update({qid: "HarryFriendZoned_9"},{$set:{clue2:"Unidentified person"}})
+
+
+db.clues.update({qid: "HarryFriendZoned_9"},{$set:{clue2:"Unidentified person"}})
+
+
+
+db.clues.update({qid: "HouseSlytherine_11"},{$set:{clue1:"The first image to appear on the web"}})
+
+db.clues.update({qid: "Basilisk_13"},{$set:{clue1:" A generic name connecting both images"}})
+
+
+db.clues.update({qid: "ParselTongue_14"},{$set:{clue1:"July 17 "}})
+
+
+db.clues.update({qid: "HarRy_PoTter_15"},{$set:{clue1:"A Companies LOGO"}})
+
+db.clues.update({qid:"LuciusMalfoy_16"},{$set:{clue1:"Connect first image with the location of the second image"}})
+
+
+db.clues.update({qid: "JKRowling_17"},{$set:{clue1:"Connect a movie by the actor and the     logo of the second"}})
+
+Connect first image with the location of the second image
+
+
+
+
+
+//clue 2
+
+
+db.clues.update({qid: "Basilisk_13"},{$set:{clue2:" Antonio banderas"}})
+
+
+db.clues.update({qid: "ParselTongue_14"},{$set:{clue2:"George R.R. Martin "}})
+
+
+db.clues.update({qid: "HarRy_PoTter_15"},{$set:{clue2:"Current version:A 3D jigsaw puzzle"}})
+
+
+db.clues.update({qid:"LuciusMalfoy_16"},{$set:{clue2:"Saigon"}})
+
+
+db.clues.update({qid: "JKRowling_17"},{$set:{clue2:"Plutarch and Suetonius"}})
+
+
+
+db.clues.update({qid: "SwordOfGG_18"},{$set:{clue1:"Connect a character from the series with translation of the other images"}})
+
+

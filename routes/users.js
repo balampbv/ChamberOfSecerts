@@ -10,12 +10,12 @@ router.get('/indexpage', function(req, res){
 });
 
 // Register
-router.get('/registerabc', function(req, res){
+router.get('/register', function(req, res){
 	res.render('register',{layout:'layout.handlebars'});
 });
 
 // Login
-router.get('/loginabc', function(req, res){
+router.get('/login', function(req, res){
 	if(req.isAuthenticated())
 	{
 	//	var username = {name : user};
